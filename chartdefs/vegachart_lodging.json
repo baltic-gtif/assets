@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Display properties from GeoJSON features",
+  "data": {
+    "name": "process_eox"
+  },
+  "transform": [
+    { "flatten": ["features"] },
+    { "calculate": "datum.features.properties.parcel_id", "as": "parcel_id" },
+    { "calculate": "datum.features.properties.crop_code", "as": "crop_code" },
+    { "calculate": "datum.features.properties.dump_ha", "as": "dump_ha" },
+    { "calculate": "datum.features.properties.dump_perc", "as": "dump_perc" },
+    {
+      "fold": ["parcel_id", "crop_code", "dump_ha", "dump_perc"],
+      "as": ["property", "value"]
+    },
+    {
+      "calculate": "datum.property + ': ' + datum.value",
+      "as": "label"
+    }
+  ],
+  "mark": "text",
+  "encoding": {
+    "y": {
+      "field": "property",
+      "type": "ordinal",
+      "axis": null
+    },
+    "text": {
+      "field": "label",
+      "type": "nominal"
+    }
+  },
+  "width": 150,
+  "height": 50
+}
