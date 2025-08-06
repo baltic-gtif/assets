@@ -1,4 +1,7 @@
 {
+  "options": {
+  "execute": true
+  },
   "type": "object",
   "properties": {
     "point": {
