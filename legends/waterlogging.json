@@ -1,0 +1,16 @@
+{
+    "title": "Waterlogging",
+    "domain": [
+      0,
+      200
+    ],
+    "range": [
+      "#ffffff",
+      "#08316d"
+    ],
+    "scaleType": "continuous",
+    "tickValues": [
+      0,
+      200
+    ]
+}
