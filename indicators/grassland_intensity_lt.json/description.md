@@ -10,3 +10,14 @@ The type and methods as machinery is used, must take into account further parcel
 - Natural seeding period of the advantageous species, etc.
 
 All these factors serve the natural genetic renewal of the herbaceous species.
+
+
+## Types of Permanent Grassland
+
+| **PG_Code** | **Description**                                                |
+|------------------|------------------------------------------------------------|
+| **EPT**          | Extensive management of grasslands for livestock grazing   |
+| **EPG**          | Extensive management of perennial meadows with livestock grazing |
+| **SPT**          | Management of specific meadows with grazing + late mowing |
+| **EBB**          | Management of natural meadows, wetlands, and habitats of EC importance |
+| **MNP**          | Conservation of Praying Mantis habitats in natural and semi-natural meadows |
