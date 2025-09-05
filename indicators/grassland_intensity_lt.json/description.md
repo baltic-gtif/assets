@@ -14,8 +14,9 @@ All these factors serve the natural genetic renewal of the herbaceous species.
 
 ## Types of Permanent Grassland
 
-- **EPT**: Extensive management of grasslands for livestock grazing
+- **MNP**: Conservation of Praying Mantis habitats in natural and semi-natural meadows
 - **EPG**: Extensive management of perennial meadows with livestock grazing
+- **EPT**: Extensive management of grasslands for livestock grazing
 - **SPT**: Management of specific meadows with grazing + late mowing
 - **EBB**: Management of natural meadows, wetlands, and habitats of EC importance
-- **MNP**: Conservation of Praying Mantis habitats in natural and semi-natural meadows
+
