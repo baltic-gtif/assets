@@ -1,0 +1,12 @@
+{
+  "tooltip": [
+    {"id": "Habitat 1", "title": "Habitat"  },
+    {"id": "Habitat 2", "title": "Habitat 2"},
+    {"id": "Habitat 3", "title": "Habitat 3"},
+    {"id": "Habitat 4", "title": "Habitat 4"},
+    {"id": "Habitat 5", "title": "Habitat 5"}
+  ],
+  "fill-color": "#aebc9e40",
+  "stroke-color": "#aebc9e60",
+  "stroke-width": 2
+}
