@@ -112,7 +112,7 @@
     {"id": "DKL_PLOTAS_HA", "title": "AREA (ha)"},
     {
       "id"   : "AnnCsequestC_t/ha_(Ave/parc)",
-      "title": "AnnCsequestC_t/ha_(Ave/parc)"
+      "title": "Annual Sequestered Carbon [t]/parcel"
     },
     {"id": "CO2-EQVSEQ_annPot-t/parc", "title": "Potential of Sequestered CO2 Eq. [t/y]/parcel"},
     {"id": "CO2-EURValue/parc", "title": "Soil Organic Carbon - CO2 Eq. [€]/parcel"},
