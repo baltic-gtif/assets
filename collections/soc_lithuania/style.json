@@ -123,7 +123,8 @@
       [ ">", ["get", "CO2-EQVSEQ_annPot-t/parc"], 79120 ],
       [118, 118, 118, 1],
       [0, 0, 255, 1]
-    ]
+    ],
+    [215, 235, 215, 0.25]
   ],
   "tooltip": [
     {"id": "PSL_KODAS", "title": "IACS CROP CODE"},
