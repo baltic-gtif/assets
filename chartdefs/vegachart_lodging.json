@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Display properties from GeoJSON features",
   "data": {
-    "name": "process_eox"
+    "name": "parcel_properties"
   },
   "transform": [
     { "flatten": ["features"] },
