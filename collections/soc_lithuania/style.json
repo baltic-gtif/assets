@@ -115,9 +115,9 @@
       "id"   : "AnnCsequestC_t/ha_(Ave/parc)",
       "title": "AnnCsequestC_t/ha_(Ave/parc)"
     },
-    {"id": "CO2-EQVSEQ_annPot-t/parc", "title": "CO2-EQVSEQ_annPot-t/parc "},
-    {"id": "CO2-EURValue/parc", "title": "CO2-EURValue/parc"},
-    {"id": "CO2_EQV_0-t/parcel", "title": "CO2_EQV_0-t/parcel"}
+    {"id": "CO2-EQVSEQ_annPot-t/parc", "title": "Potential of Sequestered CO2 Eq. [t/y]/parcel"},
+    {"id": "CO2-EURValue/parc", "title": "Soil Organic Carbon - CO2 Eq. [€]/parcel"},
+    {"id": "CO2_EQV_0-t/parcel", "title": "Soil Organic Carbon - CO2 Eq. [t]/parcel"}
   ],
   "variables": {"metric": "CO2_EQV_0-t/parcel"}
 }
