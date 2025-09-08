@@ -3,17 +3,28 @@
     {
       "title": "Soil Organic Carbon - CO2 Eq. [t]/parcel",
       "range": ["#fafafa", "#cbc9c9", "#9b9898", "#6c6767", "#3c3636"],
-      "domain": ["< 1895", "> 1895 - 2570", "> 2570 - 17055", "> 17055 - 52879", "> 52879"],
+      "domain": [
+        "< 1895",          "> 1895 - 2570",   "> 2570 - 17055",
+        "> 17055 - 52879", "> 52879"
+      ],
       "scaleType": "categorical",
       "markType": "rect",
       "boundTo": {"key": "metric", "value": "CO2_EQV_0-t/parcel"}
     },
     {
       "title": "Potential of Sequestered CO2 Eq. [t/y]/parcel",
-      "range": ["#ca0020", "#fefefe", "#404040"],
-      "domain": [0, 15, 170],
-      "scaleType": "continuous",
-      "tickFormat": ".0f",
+      "range": [
+        "#ca0020", "#dd494c", "#ef9377", "#f8c3ac", "#fdebe3", "#f0f0f0",
+        "#d1d1d1", "#acacac", "#767676", "#767676"
+      ],
+      "domain": [
+        "< 1650",          "> 1650 - 3640",   "> 3640 - 6370",
+        "> 6370 - 10130",  "> 10130 - 15270", "> 15270 - 22430",
+        "> 22430 - 32610", "> 32610 - 48260", "> 48260 - 79120",
+        "> 79120"
+      ],
+      "scaleType": "categorical",
+      "markType": "rect",
       "boundTo": {"key": "metric", "value": "CO2-EQVSEQ_annPot-t/parc"}
     },
     {
@@ -75,35 +86,44 @@
       [ "!", ["get", "CO2_EQV_0-t/parcel"] ],
       [0, 0, 0, 0],
       [ "<", ["get", "CO2_EQV_0-t/parcel"], 1895 ],
-      [245, 245, 245, 1],  
+      [245, 245, 245, 1],
       [ "<=", ["get", "CO2_EQV_0-t/parcel"], 2570 ],
-      [203, 201, 201, 1],  
+      [203, 201, 201, 1],
       [ "<=", ["get", "CO2_EQV_0-t/parcel"], 17055 ],
-      [155, 152, 152, 1],  
+      [155, 152, 152, 1],
       [ "<=", ["get", "CO2_EQV_0-t/parcel"], 52879 ],
-      [108, 103, 103, 1],  
+      [108, 103, 103, 1],
       [ ">", ["get", "CO2_EQV_0-t/parcel"], 52879 ],
-      [60, 54, 54, 1],  
+      [60, 54, 54, 1],
       [0, 0, 255, 1]
     ],
     [ "==", ["var", "metric"], "CO2-EQVSEQ_annPot-t/parc" ],
     [
       "case",
-      [ "==", ["get", "CO2-EQVSEQ_annPot-t/parc"], "N/A" ],
-      [215, 235, 215, 0.25],
-      [
-        "interpolate",
-        ["linear"],
-        ["get", "CO2-EQVSEQ_annPot-t/parc"],
-        0,
-        [202, 0, 32, 1],
-        15,
-        [254, 254, 254, 1],
-        170,
-        [64, 64, 64, 1]
-      ]
-    ],
-    [215, 235, 215, 0.25]
+      [ "!", ["get", "CO2-EQVSEQ_annPot-t/parc"] ],
+      [0, 0, 0, 0],
+      [ "<", ["get", "CO2-EQVSEQ_annPot-t/parc"], 1650 ],
+      [202, 0, 32, 1],
+      [ "<=", ["get", "CO2-EQVSEQ_annPot-t/parc"], 3640 ],
+      [221, 73, 76, 1],
+      [ "<=", ["get", "CO2-EQVSEQ_annPot-t/parc"], 6370 ],
+      [239, 147, 119, 1],
+      [ "<=", ["get", "CO2-EQVSEQ_annPot-t/parc"], 10130 ],
+      [248, 195, 172, 1],
+      [ "<=", ["get", "CO2-EQVSEQ_annPot-t/parc"], 15270 ],
+      [253, 235, 227, 1],
+      [ "<=", ["get", "CO2-EQVSEQ_annPot-t/parc"], 22430 ],
+      [240, 240, 240, 1],
+      [ "<=", ["get", "CO2-EQVSEQ_annPot-t/parc"], 32610 ],
+      [209, 209, 209, 1],
+      [ "<=", ["get", "CO2-EQVSEQ_annPot-t/parc"], 48260 ],
+      [172, 172, 172, 1],
+      [ "<=", ["get", "CO2-EQVSEQ_annPot-t/parc"], 79120 ],
+      [118, 118, 118, 1],
+      [ ">", ["get", "CO2-EQVSEQ_annPot-t/parc"], 79120 ],
+      [118, 118, 118, 1],
+      [0, 0, 255, 1]
+    ]
   ],
   "tooltip": [
     {"id": "PSL_KODAS", "title": "IACS CROP CODE"},
@@ -114,9 +134,18 @@
       "id"   : "AnnCsequestC_t/ha_(Ave/parc)",
       "title": "Annual Sequestered Carbon [t]/parcel"
     },
-    {"id": "CO2-EQVSEQ_annPot-t/parc", "title": "Potential of Sequestered CO2 Eq. [t/y]/parcel"},
-    {"id": "CO2-EURValue/parc", "title": "Soil Organic Carbon - CO2 Eq. [€]/parcel"},
-    {"id": "CO2_EQV_0-t/parcel", "title": "Soil Organic Carbon - CO2 Eq. [t]/parcel"}
+    {
+      "id"   : "CO2-EQVSEQ_annPot-t/parc",
+      "title": "Potential of Sequestered CO2 Eq. [t/y]/parcel"
+    },
+    {
+      "id"   : "CO2-EURValue/parc",
+      "title": "Soil Organic Carbon - CO2 Eq. [€]/parcel"
+    },
+    {
+      "id"   : "CO2_EQV_0-t/parcel",
+      "title": "Soil Organic Carbon - CO2 Eq. [t]/parcel"
+    }
   ],
   "variables": {"metric": "CO2_EQV_0-t/parcel"}
 }
