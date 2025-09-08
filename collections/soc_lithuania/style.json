@@ -106,27 +106,17 @@
     [215, 235, 215, 0.25]
   ],
   "tooltip": [
-    {"id": "KZS_NR", "title": "KZS_NR"},
-    {"id": "PSL_KODAS", "title": "PSL_KODAS"},
-    {"id": "DKL_PLOTAS_HA", "title": "DKL_PLOTAS_HA"},
-    {"id": "PERMETER_", "title": "PERMETER_"},
-    {"id": "GRUPE", "title": "GRUPE"},
+    {"id": "PSL_KODAS", "title": "IACS CROP CODE"},
+    {"id": "DKL_PLOTAS_HA", "title": "AREA_parcel (ha)"},
+    {"id": "GRUPE", "title": "IACS crop group"},
     {"id": "NMA_ID", "title": "NMA_ID"},
     {"id": "DKL_ID", "title": "DKL_ID"},
-    {"id": "SHAPE_Length", "title": "SHAPE_Length"},
-    {"id": "SHAPE_Area", "title": "SHAPE_Area"},
-    {"id": "area_ha", "title": "area_ha"},
     {
       "id"   : "AnnCsequestC_t/ha_(Ave/parc)",
       "title": "AnnCsequestC_t/ha_(Ave/parc)"
     },
     {"id": "CO2-EQVSEQ_annPot-t/parc", "title": "CO2-EQVSEQ_annPot-t/parc "},
-    {"id": "Prov_O2_t/parc", "title": "Prov_O2_t/parc"},
-    {"id": "Filtr_freshwater_m3/parc", "title": "Filtr_freshwater_m3/parc"},
     {"id": "CO2-EURValue/parc", "title": "CO2-EURValue/parc"},
-    {"id": "O2-EURValue/parc", "title": "O2-EURValue/parc"},
-    {"id": "H2O-EURValue/parc", "title": "H2O-EURValue/parc"},
-    {"id": "CO2-EURValue/parc2", "title": "CO2-EURValue/parc2"},
     {"id": "CO2_EQV_0-t/parcel", "title": "CO2_EQV_0-t/parcel"}
   ],
   "variables": {"metric": "CO2_EQV_0-t/parcel"}
