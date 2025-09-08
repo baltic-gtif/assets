@@ -107,10 +107,9 @@
   ],
   "tooltip": [
     {"id": "PSL_KODAS", "title": "IACS CROP CODE"},
-    {"id": "DKL_PLOTAS_HA", "title": "AREA_parcel (ha)"},
-    {"id": "GRUPE", "title": "IACS crop group"},
+    {"id": "GRUPE", "title": "IACS CROP GROUP"},
     {"id": "NMA_ID", "title": "NMA_ID"},
-    {"id": "DKL_ID", "title": "DKL_ID"},
+    {"id": "DKL_PLOTAS_HA", "title": "AREA (ha)"},
     {
       "id"   : "AnnCsequestC_t/ha_(Ave/parc)",
       "title": "AnnCsequestC_t/ha_(Ave/parc)"
