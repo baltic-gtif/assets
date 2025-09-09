@@ -1,9 +1,10 @@
 # assets
 Assets for [baltic eodash-catalog](https://github.com/baltic-gtif/baltic-catalog).
 
-Relative paths to files within this repository can be used for configuration files like styles, colorlegends, jsonforms, vegacharts as well as thumbnails or descriptions in baltic-catalog repository.
+Use relative paths within the this for configuration files such as styles, color legends, JSON forms, Vega charts, as well as for thumbnails or descriptions in the baltic-catalog repository.
 
-**This repository is not supposed to be used for larger files like vector or raster data. Upload data files using the [file browser](https://documentation.hub.eox.at/publishing-workflow-tutorial/#id-1-uploading-data-with-the-file-browser)**
+
+**This repository is not intended for large files such as vector or raster data. Please upload data files using the [file browser](https://documentation.hub.eox.at/publishing-workflow-tutorial/#id-1-uploading-data-with-the-file-browser)**
 
 ---
 
