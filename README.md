@@ -8,4 +8,4 @@ Use relative paths within the this for configuration files such as Style, JSONFo
 
 ---
 
-For access please contact elias.wanko@eox.at
+If access has not already been granted, please contact the [Baltic Workspace Service Desk](service+tenants-gtif-workspaces-baltic-gtif-request@sd.eox.at)
