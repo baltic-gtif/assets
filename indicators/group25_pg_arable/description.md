@@ -1,8 +1,12 @@
 # Soil Organic Carbon (SOC) - Lithuania
-Due to their extensive root systems and high microbial activity, **Natural Permanent Grasslands (PG)** act as important **organic carbon sinks**. The intensity and type of management, particularly mowing frequency and livestock grazing, critically influence grassland SOC levels.
-While intensive grazing can lead to reductions in soil carbon, rotational or adaptive grazing can stimulate plant growth and enhance carbon capture and storage in grassland soils.
+The carbon storage and sequestration capacity of permanent grasslands are relatively less discovered and also under-estimated, although we know that the significant root volume in the soil has an outstanding capability of carbon mobilization. 
+The indicator presents various grided soil layers of predictions, assigned to agricultural parcels. The models published by FAO are integrated to derive updated scenarios for year 2025:
+- Existing SOC content [t/parcel]\n* Annual SOC sequestration potential [t/y/parcel]\n* Estimated value of existing SOC content [€/parcel]
+- Possible SOC content after 20 years of conventional land management {until 2045} [t/parcel]
+- Possible SOC content under 20 years of sustainable soil management {until 2045} [t/parcel]
+- Estimated value increase under 20 years of sustainable soil management {until 2045} [€/parcel]
 
-### Data Sources:
-- **FAO - Global Soil Organic Carbon content and Sequestration Potential Maps (GSOCseq) V1.0.0**: Estimation of topsoil (0-30 cm) soil organic carbon sequestration potential in agricultural areas under conventional practices (Business as Usual - BAU) scenario and a Sustainable Soil Management (SSM3) scenarios - Global Soil Information System of the FAO.
-- **Parcels** are from open governmental IACS GSA data (2025), managed by the National Paying Agency of Lithuania (NMA)
-- **Sentinel-2 cloudless 2024** by EOX IT Services GmbH is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The required attribution including the given links is: \"Sentinel-2 cloudless by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2024)\"
+# Data Sources & references:
+- **Global Soil Organic Carbon content and Sequestration Potential Maps (GSOCseq) V1.0.0**: Estimation of Soil Organic Carbon content and of sequestration potential in agricultural areas under a Business as Usual (BAU) scenario and a Sustainable Soil Management scenarios Ref: FAO. 2022. Global Soil Organic Carbon Sequestration Potential Map – SOCseq v.1.1. Technical report. Rome - https://doi.org/10.4060/cb9002en
+- **Agricultural parcels** are from open governmental IACS GSA data (2025), managed by the National Paying Agency of Lithuania (NMA).
+- **Sentinel-2 cloudless** by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2024)\" Ref: https://cloudless.eox.at/"
