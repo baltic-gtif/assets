@@ -6,7 +6,7 @@ The indicator presents various grided soil layers of predictions, assigned to ag
 - Possible SOC content under 20 years of sustainable soil management {until 2045} [t/parcel]
 - Estimated value increase under 20 years of sustainable soil management {until 2045} [€/parcel]
 
-# Data Sources & references:
+## Data Sources & references:
 - **Global Soil Organic Carbon content and Sequestration Potential Maps (GSOCseq) V1.0.0**: Estimation of Soil Organic Carbon content and of sequestration potential in agricultural areas under a Business as Usual (BAU) scenario and a Sustainable Soil Management scenarios Ref: FAO. 2022. Global Soil Organic Carbon Sequestration Potential Map – SOCseq v.1.1. Technical report. Rome - https://doi.org/10.4060/cb9002en
 - **Agricultural parcels** are from open governmental IACS GSA data (2025), managed by the National Paying Agency of Lithuania (NMA).
 - **Sentinel-2 cloudless** by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2024)\" Ref: https://cloudless.eox.at/"
