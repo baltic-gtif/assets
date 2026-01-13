@@ -1,7 +1,7 @@
 {
   "legend": [
     {
-      "title": "Geometric evolution of the converted parcel from 2024 to 2025:",
+      "title": "PG converted parcels from 2024 to 2025:",
       "range": ["#f47336", "#f1c232", "#8b8c89", "#ff0000"],
       "domain": ["Converted area", "Partially Converted", "Compelexe Change", "Area no longer declared"],
       "scaleType": "categorical",
@@ -11,14 +11,14 @@
     {
       "title": "Conversion of Permanent Grassland parcel (2024) into another category of parcel (2025):",
       "range": ["#351c75", "#cbdf90", "#0b5394", "#5b5b5b"],
-      "domain": ["Arable Land ", "Temporary Grassland", "Other category", "No Category"],
+      "domain": ["PG to Arable Land ", "PG to Temporary Grassland", "PG to Other category", "PG to No Category"],
       "scaleType": "categorical",
       "markType": "rect",
       "boundTo": { "key": "metric", "value": "classification_2025" }
     }
   ],
 
-  "stroke-width": 1,
+  "stroke-width": 1.2,
   "stroke-color": "#f44336",
 
   "jsonform": {
@@ -33,8 +33,8 @@
             "source_file"],
         "options": {
           "enum_titles": [
-              "Evolution (Thematic)", 
-              "Evolution (Geometric)"]
+              "New Land Use - 2025 (Thematic)", 
+              "PG changes - 2025 (Geometric)"]
         },
         "default": "classification_2025"
       }
