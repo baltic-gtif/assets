@@ -1,7 +1,7 @@
 {
   "legend": [
     {
-      "title": "Geometric evolution of the converted parcel from 2024 to 2025:",
+      "title": "Converted to PG from 2024 to 2025:",
       "range": ["#f47336", "#f1c232", "#8b8c89", "#c90076"],
       "domain": ["Converted area", "Partially Converted", "Complexe Change", "New PG declared"],
       "scaleType": "categorical",
