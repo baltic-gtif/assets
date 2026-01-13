@@ -1,0 +1,92 @@
+{
+  "legend": [
+    {
+      "title": "Geometric evolution of the converted parcel from 2024 to 2025:",
+      "range": ["#f47336", "#f1c232", "#8b8c89", "#c90076"],
+      "domain": ["Converted area", "Partially Converted", "Compelexe Change", "New declared area"],
+      "scaleType": "categorical",
+      "markType": "rect",
+      "boundTo": { "key": "metric", "value": "source_file" }
+    },
+    {
+      "title": "Conversion of (diverse categories) parcel (2024) into Permanent Grassland parcel (2025):",
+      "range": ["#6a329f", "#274e13", "#bf9000", "#d4fa43", "#a64d79", "#00fff7", "#bcbcbc"],
+      "domain": ["Arable Land ", "Forest", "Permanent Crop", "Temporary Grassland", "S-Vicia ", "Wetland", "No Category"],
+      "scaleType": "categorical",
+      "markType": "rect",
+      "boundTo": { "key": "metric", "value": "classification_2024" }
+    }
+  ],
+
+  "stroke-width": 1,
+  "stroke-color": "#62b83d",
+
+  "jsonform": {
+    "type": "object",
+    "title": "Data configuration",
+    "properties": {
+      "metric": {
+        "title": "Metric",
+        "type": "string",
+        "enum": [
+            "classification_2024", 
+            "source_file"],
+        "options": {
+          "enum_titles": [
+              "Evolution (Thematic)", 
+              "Evolution (Geometric)"]
+        },
+        "default": "classification_2024"
+      }
+    }
+  },
+
+  "fill-color": [
+    "case",
+
+    ["==", ["var", "metric"], "source_file"],
+    [
+      "case",
+      ["!", ["get", "source_file"]], [0, 0, 0, 0],
+      ["==", ["get", "source_file"], "one_to_one"], "#f47336",
+      ["==", ["get", "source_file"], "new"], "#c90076",
+      ["==", ["get", "source_file"], "disappeared"], "#f47336",
+      ["==", ["get", "source_file"], "only_merges"], "#f47336",
+      ["==", ["get", "source_file"], "only_splits"], "#f1c232",
+      ["==", ["get", "source_file"], "other_changes"], "#8b8c89",
+      ["==", ["get", "source_file"], "union_other_changes_converted"], "#8b8c89",
+      [0, 0, 0, 1]
+    ],
+
+    ["==", ["var", "metric"], "classification_2024"],
+    [
+      "case",
+      ["!", ["get", "classification_2024"]], [0, 0, 0, 0],
+      ["==", ["get", "classification_2024"], "AL"], "#6a329f",
+      ["==", ["get", "classification_2024"], "F"], "#274e13",
+      ["==", ["get", "classification_2024"], "PC"], "#bf9000",
+      ["==", ["get", "classification_2024"], "TG"], "#d4fa43",
+      ["==", ["get", "classification_2024"], "S"], "#a64d79",
+      ["==", ["get", "classification_2024"], "W"], "#00fff7",
+      ["==", ["get", "classification_2024"], "No category"], "#bcbcbc",
+      [0, 0, 0, 1]
+    ],
+    [215, 235, 215, 0.25]
+  ],
+
+  "tooltip": [
+    { "id": "ID_2025", "title": "Internal ID - 2025" , "decimals": 0},
+    { "id": "ID_2024", "title": "Internal ID - 2024" , "decimals": 0},
+    { "id": "PSL_KODAS_2024", "title": "Type - 2024" },
+    { "id": "PSL_KODAS_2025", "title": "Type - 2025" },
+    { "id": "classification_2024", "title": "Category - 2024" },
+    { "id": "classification_2025", "title": "Category - 2025" },
+    { "id": "source_file", "title": "Evolution - Geometric" },
+    { "id": "conversion_type", "title": "Evolution - Thematic" },
+    { "id": "area_ha_2024", "title": "Parcel area (ha)", "decimals": 1 }
+  ],
+
+  "variables": {
+    "metric": "classification_2024"
+  }
+}
