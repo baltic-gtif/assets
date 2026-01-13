@@ -11,7 +11,7 @@
     {
       "title": "Conversion of (diverse categories) parcel (2024) into Permanent Grassland parcel (2025):",
       "range": ["#6a329f", "#274e13", "#bf9000", "#d4fa43", "#a64d79", "#00fff7", "#bcbcbc"],
-      "domain": ["Arable Land ", "Forest", "Permanent Crop", "Temporary Grassland", "S-Vicia ", "Wetland", "No Category"],
+      "domain": ["Arable Land to PG", "Forest to PG", "Permanent Crop to PG", "Temporary Grassland to PG", "S-Vicia to PG", "Wetland to PG", "No Category to PG"],
       "scaleType": "categorical",
       "markType": "rect",
       "boundTo": { "key": "metric", "value": "classification_2024" }
