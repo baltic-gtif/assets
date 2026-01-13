@@ -1,7 +1,9 @@
 # Soil Organic Carbon (SOC) - Lithuania
 The carbon storage and sequestration capacity of permanent grasslands are relatively less discovered and also under-estimated, although we know that the significant root volume in the soil has an outstanding capability of carbon mobilization. 
 The indicator presents various grided soil layers of predictions, assigned to agricultural parcels. The models published by FAO are integrated to derive updated scenarios for year 2025:
-- Existing SOC content [t/parcel]\n* Annual SOC sequestration potential [t/y/parcel]\n* Estimated value of existing SOC content [€/parcel]
+- Existing SOC content [t/parcel]
+- Annual SOC sequestration potential [t/y/parcel]
+- Estimated value of existing SOC content [€/parcel]
 - Possible SOC content after 20 years of conventional land management {until 2045} [t/parcel]
 - Possible SOC content under 20 years of sustainable soil management {until 2045} [t/parcel]
 - Estimated value increase under 20 years of sustainable soil management {until 2045} [€/parcel]
