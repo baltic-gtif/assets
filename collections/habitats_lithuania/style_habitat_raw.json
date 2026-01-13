@@ -3,7 +3,7 @@
     {
       "title": "Habitat",
       "range": ["#b8855030", "#eac195"],
-      "domain": ["One Habitat", "Multiple Habitat"],
+      "domain": ["One Habitat", "Multiple Habitats"],
       "scaleType": "categorical",
       "markType": "rect"
     }
