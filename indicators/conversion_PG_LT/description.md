@@ -1,7 +1,7 @@
 # Conversion of Permanent Grassland - Lithuania
 
 This indicator shows which land-use categories are most frequently converted to or from Permanent Grassland and where these conversions occur spatially. 
-It helps identify hotspots of change, revealing regions where specific categories drive grassland loss or contribute most to grassland positive conversion.
+It helps to identify hotspots of land use change, revealing regions where specific categories drive grassland loss or contribute most to grassland positive conversion.
 
 ## Data Sources & references:
 - **Global Soil Organic Carbon** content and Sequestration Potential Maps (GSOCseq) V1.0.0:
