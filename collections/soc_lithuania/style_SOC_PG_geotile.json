@@ -20,7 +20,7 @@
     ],
       "scaleType": "categorical",
       "markType": "rect",
-      "boundTo": {"key": "metric", "value": "asr_t_ha_y"}
+      "boundTo": {"key": "metric", "value": "ASR_t_parc_y"}
     },
     {
       "title": "Estimated value of Annual SOC sequestration in €/Year for each individual parcel [€/y/parcel]",
@@ -42,7 +42,7 @@
         "type": "string",
         "enum": [
           "soctot_parcel_gsocseq_t2025",
-          "asr_t_ha_y",
+          "ASR_t_parc_y",
           "asr_value"
         ],
         "options": {
@@ -92,24 +92,24 @@
       [60, 54, 54, 1],
       [0, 0, 255, 1]
     ],
-    [ "==", ["var", "metric"], "asr_t_ha_y" ],
+    [ "==", ["var", "metric"], "ASR_t_parc_y" ],
     [
       "case",
-      [ "!", ["get", "asr_t_ha_y"] ],
+      [ "!", ["get", "ASR_t_parc_y"] ],
       [0, 0, 0, 0],
-      ["<", ["get", "asr_t_ha_y"], 0],
+      ["<", ["get", "ASR_t_parc_y"], 0],
       "#005ea088",
-      ["<=", ["get", "asr_t_ha_y"], 0.5],
+      ["<=", ["get", "ASR_t_parc_y"], 0.5],
       "#ffcccc",
-      ["<=", ["get", "asr_t_ha_y"], 1],
+      ["<=", ["get", "ASR_t_parc_y"], 1],
       "#ff3232",
-      ["<=", ["get", "asr_t_ha_y"], 2],
+      ["<=", ["get", "ASR_t_parc_y"], 2],
       "#ff0000",
-      ["<=", ["get", "asr_t_ha_y"], 3],
+      ["<=", ["get", "ASR_t_parc_y"], 3],
       "#cc0000",
-      ["<=", ["get", "asr_t_ha_y"], 5],
+      ["<=", ["get", "ASR_t_parc_y"], 5],
       "#7f0000",
-      [">", ["get", "asr_t_ha_y"], 5],
+      [">", ["get", "ASR_t_parc_y"], 5],
       "#330000",
       [0, 0, 0, 0] 
     ],
@@ -117,13 +117,13 @@
   ],
   "tooltip": [
     {"id": "id_2025", "title": "Internal IACS-ID", "decimals": 0},
-    {"id": "Area_ha", "title": "Parcel Size (ha)", "decimals": 1},
+    {"id": "area_ha", "title": "Parcel Size (ha)", "decimals": 1},
     {
       "id"   : "soctot_parcel_gsocseq_t2025",
       "title": "Existing SOC in 2025 [t/parcel]", "decimals": 0
     },
     {
-      "id"   : "asr_t_ha_y",
+      "id"   : "ASR_t_parc_y",
       "title": "Sequestration Potential Per Year [t/y/parcel]", "decimals": 4
     },
     {
