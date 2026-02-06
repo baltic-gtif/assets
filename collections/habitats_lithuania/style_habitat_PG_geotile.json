@@ -55,7 +55,7 @@
   ],
   "tooltip": [
     {"id": "psl_kodas", "title": "PG Type"},
-    {"id": "id_2025", "title": "Internal ID 2025", "decimals": 0},
+    {"id": "id_year", "title": "Internal ID", "decimals": 0},
     {"id": "area_ha", "title": "Parcel area (ha)", "decimals": 1},
     {"id": "habitat_1", "title": "Habitat 1"},
     {"id": "habitat_2", "title": "Habitat 2"},
