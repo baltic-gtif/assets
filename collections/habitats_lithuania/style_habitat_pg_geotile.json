@@ -1,0 +1,70 @@
+{
+  "legend": [
+    {
+      "title": "Permanent Grassland Type",
+      "range": ["#7fc97f", "#beaed4", "#cc0000", "#ffff99", "#386cb0"],
+      "domain": ["1LT", "EPG", "EBB", "DGJ", "DGP"],
+      "scaleType": "categorical",
+      "markType": "rect",
+      "boundTo": {"key": "metric", "value": "psl_kodas"}
+    }
+  ],
+
+  "stroke-width": 1,
+
+  "jsonform": {
+    "type": "object",
+    "title": "Data configuration",
+    "properties": {
+      "metric": {
+        "title": "Metric",
+        "type": "string",
+        "enum": ["psl_kodas"],
+        "options": {
+          "hidden": true
+        },
+        "default": "psl_kodas"
+      }
+    }
+  },
+
+  "fill-color": [
+    "case",
+      
+    [ "==", ["var", "metric"], "psl_kodas" ],
+    [
+      "case",
+      [ "==", ["get", "psl_kodas"], "1LT" ], "#7fc97f33",
+      [ "==", ["get", "psl_kodas"], "EPG" ], "#beaed433",
+      [ "==", ["get", "psl_kodas"], "EBB" ], "#cc000033",
+      [ "==", ["get", "psl_kodas"], "DGJ" ], "#ffff9933",
+      [ "==", ["get", "psl_kodas"], "DGP" ], "#386cb033",
+      "#D7EBD7"
+    ],
+    "#D7EBD7"
+  ],
+
+  "stroke-color": [
+    "case",
+    [ "==", ["get", "psl_kodas"], "1LT" ], "#7fc97f",
+    [ "==", ["get", "psl_kodas"], "EPG" ], "#beaed4",
+    [ "==", ["get", "psl_kodas"], "EBB" ], "#cc000033",
+    [ "==", ["get", "psl_kodas"], "DGJ" ], "#ffff9933",
+    [ "==", ["get", "psl_kodas"], "DGP" ], "#386cb0",
+    "#D7EBD7"
+  ],
+  "tooltip": [
+    {"id": "psl_kodas", "title": "PG Type"},
+    {"id": "id_2025", "title": "Internal ID 2025", "decimals": 0},
+    {"id": "area_ha", "title": "Parcel area (ha)", "decimals": 1},
+    {"id": "habitat_1", "title": "Habitat 1"},
+    {"id": "habitat_2", "title": "Habitat 2"},
+    {"id": "habitat_3", "title": "Habitat 3"},
+    {"id": "habitat_4", "title": "Habitat 4"},
+    {"id": "shared_1", "title": "Area overlap Habitat 1 (%)", "decimals": 0},
+    {"id": "shared_2", "title": "Area overlap Habitat 2 (%)", "decimals": 0},
+    {"id": "shared_3", "title": "Area overlap Habitat 3 (%)", "decimals": 0},
+    {"id": "shared_4", "title": "Area overlap Habitat 4 (%)", "decimals": 0}
+  ],
+
+  "variables": {"metric": "psl_kodas"}
