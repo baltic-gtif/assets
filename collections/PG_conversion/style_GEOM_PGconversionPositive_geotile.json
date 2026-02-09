@@ -82,7 +82,6 @@
     { "id": "classification_2024", "title": "Category - 2024" },
     { "id": "classification_2025", "title": "Category - 2025" },
     { "id": "source_file", "title": "Evolution - Geometric" },
-    { "id": "conversion_type", "title": "Evolution - Thematic" },
     { "id": "area_ha_2025", "title": "Parcel area (ha)", "decimals": 1 }
   ],
 
