@@ -1,0 +1,26 @@
+{
+  "legend": [
+    {
+      "title": "Habitat",
+      "range": ["#b8855030", "#eac195"],
+      "domain": ["One Habitat", "Multiple Habitats"],
+      "scaleType": "categorical",
+      "markType": "rect"
+    }
+  ],
+
+  "stroke-width": 1,
+  "stroke-color": "#b0977d50",
+
+  "jsonform": {
+    "type": "object",
+    "title": "Data configuration"
+  },
+
+  "fill-color": "#b8855050",
+
+  "tooltip": [
+    { "id": "habitat", "title": "Habitat" }
+  ]
+
+}
