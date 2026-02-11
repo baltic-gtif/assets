@@ -14,7 +14,7 @@
       "domain": ["Arable Land to PG", "Forest to PG", "Permanent Crop to PG", "Temporary Grassland to PG", "S-Vicia to PG", "Wetland to PG", "No Category to PG"],
       "scaleType": "categorical",
       "markType": "rect",
-      "boundTo": { "key": "metric", "value": "classification_X1" }
+      "boundTo": { "key": "metric", "value": "classification_year_x1" }
     }
   ],
 
@@ -29,14 +29,14 @@
         "title": "Metric",
         "type": "string",
         "enum": [
-            "classification_X1", 
+            "classification_year_x1", 
             "source_file"],
         "options": {
           "enum_titles": [
               "Previous Land Use - 2024 (Thematic)", 
               "PG changes - 2025 (Geometric)"]
         },
-        "default": "classification_X1"
+        "default": "classification_year_x1"
       }
     }
   },
@@ -58,34 +58,34 @@
       [0, 0, 0, 1]
     ],
 
-    ["==", ["var", "metric"], "classification_X1"],
+    ["==", ["var", "metric"], "classification_year_x1"],
     [
       "case",
-      ["!", ["get", "classification_X1"]], [0, 0, 0, 0],
-      ["==", ["get", "classification_X1"], "AL"], "#6a329f",
-      ["==", ["get", "classification_X1"], "F"], "#274e13",
-      ["==", ["get", "classification_X1"], "PC"], "#bf9000",
-      ["==", ["get", "classification_X1"], "TG"], "#d4fa43",
-      ["==", ["get", "classification_X1"], "S"], "#a64d79",
-      ["==", ["get", "classification_X1"], "W"], "#00fff7",
-      ["==", ["get", "classification_X1"], "No category"], "#bcbcbc",
+      ["!", ["get", "classification_year_x1"]], [0, 0, 0, 0],
+      ["==", ["get", "classification_year_x1"], "AL"], "#6a329f",
+      ["==", ["get", "classification_year_x1"], "F"], "#274e13",
+      ["==", ["get", "classification_year_x1"], "PC"], "#bf9000",
+      ["==", ["get", "classification_year_x1"], "TG"], "#d4fa43",
+      ["==", ["get", "classification_year_x1"], "S"], "#a64d79",
+      ["==", ["get", "classification_year_x1"], "W"], "#00fff7",
+      ["==", ["get", "classification_year_x1"], "No category"], "#bcbcbc",
       [0, 0, 0, 1]
     ],
     [215, 235, 215, 0.25]
   ],
 
   "tooltip": [
-    { "id": "id_X", "title": "Internal ID - 2025" , "decimals": 0},
-    { "id": "id_X1", "title": "Internal ID - 2024" , "decimals": 0},
-    { "id": "psl_kodas_X1", "title": "Type - 2024" },
-    { "id": "psl_kodas_X", "title": "Type - 2025" },
-    { "id": "classification_X1", "title": "Category - 2024" },
-    { "id": "classification_X", "title": "Category - 2025" },
+    { "id": "id_year_x", "title": "Internal ID - 2025" , "decimals": 0},
+    { "id": "id_year_x1", "title": "Internal ID - 2024" , "decimals": 0},
+    { "id": "psl_kodas_year_x1", "title": "Type - 2024" },
+    { "id": "psl_kodas_year_x", "title": "Type - 2025" },
+    { "id": "classification_year_x1", "title": "Category - 2024" },
+    { "id": "classification_year_x", "title": "Category - 2025" },
     { "id": "source_file", "title": "Evolution - Geometric" },
-    { "id": "area_ha_X", "title": "Parcel area (ha)", "decimals": 1 }
+    { "id": "area_ha_year_x", "title": "Parcel area (ha)", "decimals": 1 }
   ],
 
   "variables": {
-    "metric": "classification_X1"
+    "metric": "classification_year_x1"
   }
 }
