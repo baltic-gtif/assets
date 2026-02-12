@@ -1,0 +1,135 @@
+{
+  "legend": [
+    {
+      "title": "Existing SOC content in Tonnes for each individual parcel in current year [t/parcel]",
+      "range": ["#ede0e0", "#bebebe", "#9b9898", "#6c6767", "#3c3636"],
+      "domain": [
+        "<30",">30-200",">200-350",">350-7500",">7500"
+      ],
+      "scaleType": "categorical",
+      "markType": "rect",
+      "boundTo": {"key": "metric", "value": "soctot_parcel_gsocseq_tyear"}
+    },
+    {
+      "title": "Annual SOC sequestration in Tonnes/Year for each individual parcel [t/y/parcel]",
+      "range": [
+        "#005ea0", "#ffcccc",  "#ff3232", "#ff0000", "#cc0000", "#7f0000", "#330000"
+      ],
+    "domain": [
+      "<0",">0-0.5",">0.5-1",">1-2",">2-3", ">3-5",">5"
+    ],
+      "scaleType": "categorical",
+      "markType": "rect",
+      "boundTo": {"key": "metric", "value": "asr_t_ha_y"}
+    },
+    {
+      "title": "Estimated value of Annual SOC sequestration in €/Year for each individual parcel [€/y/parcel]",
+      "range": ["#005ea0", "#fbb4b9", "#f768a1", "#b5179e", "#10002b"],
+      "domain": ["<0", ">0-4", ">4-7", ">7-127", ">127"],
+      "scaleType": "categorical",
+      "markType": "rect",
+      "boundTo": {"key": "metric", "value": "asr_value"}
+    }
+  ],
+  "stroke-width": 3,
+  "stroke-color": "#f4843650",
+  "jsonform": {
+    "type": "object",
+    "title": "Data configuration",
+    "properties": {
+      "metric": {
+        "title": "Metric",
+        "type": "string",
+        "enum": [
+          "soctot_parcel_gsocseq_tyear",
+          "asr_t_ha_y",
+          "asr_value"
+        ],
+        "options": {
+          "enum_titles": [
+            "Existing SOC content in current year [t/parcel]",
+            "Annual SOC sequestration [t/y/parcel]",
+            "Estimated value of Annual SOC sequestration [€/y/parcel]"
+          ]
+        },
+        "default": "soctot_parcel_gsocseq_tyear"
+      }
+    }
+  },
+  "fill-color": [
+    "case",
+    [ "==", ["var", "metric"], "asr_value" ],
+    [
+      "case",
+      [ "!", ["get", "asr_value"] ],
+      [0, 0, 0, 0],
+      [ "<", ["get", "asr_value"], 0],
+      "#005ea0",
+      [ "<=", ["get", "asr_value"], 4 ],
+      [251, 180, 185, 1],
+      [ "<=", ["get", "asr_value"], 7 ],
+      [247, 104, 161, 1],
+      [ "<=", ["get", "asr_value"], 127 ],
+      "#b5179e",
+      [ ">", ["get", "asr_value"], 127 ],
+      "#10002b",
+      [0, 0, 255, 1]
+    ],
+    [ "==", ["var", "metric"], "soctot_parcel_gsocseq_tyear" ],
+    [
+      "case",
+      [ "!", ["get", "soctot_parcel_gsocseq_tyear"] ],
+      [0, 0, 0, 0],
+      [ "<", ["get", "soctot_parcel_gsocseq_tyear"], 30 ],
+      [237, 224, 224, 1], 
+      [ "<=", ["get", "soctot_parcel_gsocseq_tyear"], 200 ],
+      [190, 190, 190, 1],
+      [ "<=", ["get", "soctot_parcel_gsocseq_tyear"], 350 ],
+      [155, 152, 152, 1],
+      [ "<=", ["get", "soctot_parcel_gsocseq_tyear"], 7500 ],
+      [108, 103, 103, 1],
+      [ ">", ["get", "soctot_parcel_gsocseq_tyear"], 7500 ],
+      [60, 54, 54, 1],
+      [0, 0, 255, 1]
+    ],
+    [ "==", ["var", "metric"], "asr_t_ha_y" ],
+    [
+      "case",
+      [ "!", ["get", "asr_t_ha_y"] ],
+      [0, 0, 0, 0],
+      ["<", ["get", "asr_t_ha_y"], 0],
+      "#005ea088",
+      ["<=", ["get", "asr_t_ha_y"], 0.5],
+      "#ffcccc",
+      ["<=", ["get", "asr_t_ha_y"], 1],
+      "#ff3232",
+      ["<=", ["get", "asr_t_ha_y"], 2],
+      "#ff0000",
+      ["<=", ["get", "asr_t_ha_y"], 3],
+      "#cc0000",
+      ["<=", ["get", "asr_t_ha_y"], 5],
+      "#7f0000",
+      [">", ["get", "asr_t_ha_y"], 5],
+      "#330000",
+      [0, 0, 0, 0] 
+    ],
+    [215, 235, 215, 0.25]
+  ],
+  "tooltip": [
+    {"id": "id_year", "title": "Internal IACS-ID"},
+    {"id": "area_ha", "title": "Parcel Size (ha)"},
+    {
+      "id"   : "soctot_parcel_gsocseq_tyear",
+      "title": "Existing SOC content in current year [t/parcel]"
+    },
+    {
+      "id"   : "asr_t_ha_y",
+      "title": "Sequestration Potential Per Year [t/y/parcel]"
+    },
+    {
+      "id"   : "tyear_value",
+      "title": "Existing SOC content in current year [€/parcel]"
+    }
+  ],
+  "variables": {"metric": "soctot_parcel_gsocseq_tyear"} 
+}
