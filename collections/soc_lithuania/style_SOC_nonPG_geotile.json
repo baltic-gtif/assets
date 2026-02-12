@@ -125,6 +125,10 @@
     {
       "id"   : "asr_t_ha_y",
       "title": "Sequestration Potential Per Year [t/y/parcel]"
+    },    
+    {
+      "id"   : "asr_value",
+      "title": "Sequestration Potential Value Per Year [€/y/parcel]", "decimals": 4
     },
     {
       "id"   : "tyear_value",
