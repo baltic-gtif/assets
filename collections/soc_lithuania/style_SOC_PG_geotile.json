@@ -116,8 +116,8 @@
     [215, 235, 215, 0.25]
   ],
   "tooltip": [
-    { "id": "id_2025", "title": "Internal IACS-ID 2025", "decimals": 0},
-    { "id": "id_2024", "title": "Internal IACS-ID 2024", "decimals": 0},
+    { "id": "id_year", "title": "Internal IACS-ID", "decimals": 0},
+    
     {"id": "area_ha", "title": "Parcel Size (ha)", "decimals": 1},
     {
       "id"   : "soctot_parcel_gsocseq_tyear",
