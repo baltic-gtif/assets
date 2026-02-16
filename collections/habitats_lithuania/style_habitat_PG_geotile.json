@@ -4,13 +4,13 @@
       "title": "Permanent Grassland Type",
       "range": [
         "#7fc97f", "#beaed4", "#cc0000", "#ffff99", "#386cb0", 
-        "#f0027f", "#bf5b17", "#66a61e", "#e6ab02", "#a6761d",
-        "#666666", "#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#a6cee3"
+        "#f0027f", "#bf5b17", "#666666", "#1b9e77", "#d95f02", 
+        "#7570b3", "#e7298a", "#66a61e", "#e6ab02", "#a6761d"
       ],
       "domain": [
         "1LT", "EPG", "EBB", "DGJ", "DGP", 
-        "5PT-11", "5PT-12", "ŠLT", "EPT", "SPT",
-        "AKP", "EKP", "INZ", "DKP", "KEE", "MNP"
+        "5PT-11", "5PT-12", "AKP", "EKP", "INZ", 
+        "DKP", "KEE", "ŠLT", "EPT", "SPT", "MNP"
       ],
       "scaleType": "categorical",
       "markType": "rect",
@@ -20,9 +20,23 @@
 
   "stroke-width": 1,
 
+  "jsonform": {
+    "type": "object",
+    "title": "Data configuration",
+    "properties": {
+      "metric": {
+        "title": "Metric",
+        "type": "string",
+        "enum": ["psl_kodas"],
+        "options": { "hidden": true },
+        "default": "psl_kodas"
+      }
+    }
+  },
+
   "fill-color": [
     "case",
-    ["has", "id_2025"], 
+    ["==", ["var", "metric"], "psl_kodas"],
     [
       "case",
       ["==", ["get", "psl_kodas"], "1LT"], "#7fc97f33",
@@ -30,23 +44,16 @@
       ["==", ["get", "psl_kodas"], "EBB"], "#cc000033",
       ["==", ["get", "psl_kodas"], "DGJ"], "#ffff9933",
       ["==", ["get", "psl_kodas"], "DGP"], "#386cb033",
-      "#D7EBD7"
-    ],
-    ["has", "id_2024"],
-    [
-      "case",
       ["==", ["get", "psl_kodas"], "5PT-11"], "#f0027f33",
       ["==", ["get", "psl_kodas"], "5PT-12"], "#bf5b1733",
-      ["==", ["get", "psl_kodas"], "ŠLT"], "#66a61e33",
-      ["==", ["get", "psl_kodas"], "EPT"], "#e6ab0233",
-      ["==", ["get", "psl_kodas"], "DGP"], "#386cb033",
       ["==", ["get", "psl_kodas"], "AKP"], "#66666633",
       ["==", ["get", "psl_kodas"], "EKP"], "#1b9e7733",
-      ["==", ["get", "psl_kodas"], "SPT"], "#a6761d33",
-      ["==", ["get", "psl_kodas"], "KEE"], "#e7298a33",
+      ["==", ["get", "psl_kodas"], "INZ"], "#d95f0233",
       ["==", ["get", "psl_kodas"], "DKP"], "#7570b333",
-      ["==", ["get", "psl_kodas"], "EBB"], "#cc000033",
-      ["==", ["get", "psl_kodas"], "EPG"], "#beaed433",
+      ["==", ["get", "psl_kodas"], "KEE"], "#e7298a33",
+      ["==", ["get", "psl_kodas"], "ŠLT"], "#66a61e33",
+      ["==", ["get", "psl_kodas"], "EPT"], "#e6ab0233",
+      ["==", ["get", "psl_kodas"], "SPT"], "#a6761d33",
       ["==", ["get", "psl_kodas"], "MNP"], "#a6cee333",
       "#D7EBD7"
     ],
@@ -55,42 +62,37 @@
 
   "stroke-color": [
     "case",
-    ["has", "id_2025"],
-    [
-      "case",
-      ["==", ["get", "psl_kodas"], "1LT"], "#7fc97f",
-      ["==", ["get", "psl_kodas"], "EPG"], "#beaed4",
-      ["==", ["get", "psl_kodas"], "EBB"], "#cc0000",
-      ["==", ["get", "psl_kodas"], "DGJ"], "#ffff99",
-      ["==", ["get", "psl_kodas"], "DGP"], "#386cb0",
-      "#D7EBD7"
-    ],
-    ["has", "id_2024"],
-    [
-      "case",
-      ["==", ["get", "psl_kodas"], "5PT-11"], "#f0027f",
-      ["==", ["get", "psl_kodas"], "5PT-12"], "#bf5b17",
-      ["==", ["get", "psl_kodas"], "ŠLT"], "#66a61e",
-      ["==", ["get", "psl_kodas"], "EPT"], "#e6ab02",
-      ["==", ["get", "psl_kodas"], "DGP"], "#386cb0",
-      ["==", ["get", "psl_kodas"], "AKP"], "#666666",
-      ["==", ["get", "psl_kodas"], "EKP"], "#1b9e77",
-      ["==", ["get", "psl_kodas"], "SPT"], "#a6761d",
-      ["==", ["get", "psl_kodas"], "KEE"], "#e7298a",
-      ["==", ["get", "psl_kodas"], "DKP"], "#7570b3",
-      ["==", ["get", "psl_kodas"], "EBB"], "#cc0000",
-      ["==", ["get", "psl_kodas"], "EPG"], "#beaed4",
-      ["==", ["get", "psl_kodas"], "MNP"], "#a6cee3",
-      "#D7EBD7"
-    ],
+    ["==", ["get", "psl_kodas"], "1LT"], "#7fc97f",
+    ["==", ["get", "psl_kodas"], "EPG"], "#beaed4",
+    ["==", ["get", "psl_kodas"], "EBB"], "#cc0000",
+    ["==", ["get", "psl_kodas"], "DGJ"], "#ffff99",
+    ["==", ["get", "psl_kodas"], "DGP"], "#386cb0",
+    ["==", ["get", "psl_kodas"], "5PT-11"], "#f0027f",
+    ["==", ["get", "psl_kodas"], "5PT-12"], "#bf5b17",
+    ["==", ["get", "psl_kodas"], "AKP"], "#666666",
+    ["==", ["get", "psl_kodas"], "EKP"], "#1b9e77",
+    ["==", ["get", "psl_kodas"], "INZ"], "#d95f02",
+    ["==", ["get", "psl_kodas"], "DKP"], "#7570b3",
+    ["==", ["get", "psl_kodas"], "KEE"], "#e7298a",
+    ["==", ["get", "psl_kodas"], "ŠLT"], "#66a61e",
+    ["==", ["get", "psl_kodas"], "EPT"], "#e6ab02",
+    ["==", ["get", "psl_kodas"], "SPT"], "#a6761d",
+    ["==", ["get", "psl_kodas"], "MNP"], "#a6cee3",
     "#D7EBD7"
   ],
 
   "tooltip": [
     { "id": "psl_kodas", "title": "PG Type" },
-    { "id": "id_2025", "title": "2025 ID" },
-    { "id": "id_2024", "title": "2024 ID" },
-    { "id": "area_ha", "title": "Parcel area (ha)", "decimals": 1 }
+    { "id": "id_year", "title": "Internal ID", "decimals": 0 },
+    { "id": "area_ha", "title": "Parcel area (ha)", "decimals": 1 },
+    { "id": "habitat_1", "title": "Habitat 1" },
+    { "id": "habitat_2", "title": "Habitat 2" },
+    { "id": "habitat_3", "title": "Habitat 3" },
+    { "id": "habitat_4", "title": "Habitat 4" },
+    { "id": "shared_1", "title": "Area overlap Habitat 1 (%)", "decimals": 0 },
+    { "id": "shared_2", "title": "Area overlap Habitat 2 (%)", "decimals": 0 },
+    { "id": "shared_3", "title": "Area overlap Habitat 3 (%)", "decimals": 0 },
+    { "id": "shared_4", "title": "Area overlap Habitat 4 (%)", "decimals": 0 }
   ],
 
   "variables": { "metric": "psl_kodas" }
