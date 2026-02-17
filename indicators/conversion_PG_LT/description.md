@@ -15,5 +15,4 @@ It helps to identify hotspots of land use change, revealing regions where specif
 - **Sentinel-2 cloudless** by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2024)\" Ref: https://cloudless.eox.at/".
 
 ## Legend description:
-
-[code description PDF](https://workspace-ui-public.baltic-gtif.hub-otc.eox.at/api/public/share/public-4wazei3y-02/NCS/Code description - Lithuania.pdf)
+[Code description PDF](https://workspace-ui-public.baltic-gtif.hub-otc.eox.at/api/public/share/public-4wazei3y-02/NCS/Code_description_Lithuania.pdf)
