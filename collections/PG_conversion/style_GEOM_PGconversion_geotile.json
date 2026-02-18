@@ -10,8 +10,8 @@
     },
     {
       "title": "Conversion of Permanent Grassland parcel (2024) into another category of parcel (2025):",
-      "range": ["#351c75", "#cbdf90", "#0b5394", "#5b5b5b"],
-      "domain": ["PG to Arable Land ", "PG to Temporary Grassland", "PG to Other category", "PG to No Category"],
+      "range": ["#351c75", "#cbdf90", "#1c450b", "#0b5394", "#5b5b5b"],
+      "domain": ["PG to Arable Land ", "PG to Temporary Grassland", "PG to Forest", "PG to Other category", "PG to No Category"],
       "scaleType": "categorical",
       "markType": "rect",
       "boundTo": { "key": "metric", "value": "classification_year_x1" }
@@ -63,7 +63,8 @@
       "case",
       ["!", ["get", "classification_year_x1"]], [0, 0, 0, 0],
       ["==", ["get", "classification_year_x1"], "AL"], "#351c75",
-      ["==", ["get", "classification_year_x1"], "TG"], "#cbdf90",
+      ["==", ["get", "classification_year_x1"], "TG"], "#cbdf90", 
+      ["==", ["get", "classification_year_x1"], "F"], "#1c450b",
       ["==", ["get", "classification_year_x1"], "nan"], "#0b5394",
       ["==", ["get", "classification_year_x1"], "No category"], "#5b5b5b",
 
