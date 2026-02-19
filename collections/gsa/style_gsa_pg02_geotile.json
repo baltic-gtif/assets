@@ -1,6 +1,7 @@
 {
   "legend": [
     {
+      "title": "Parcel Type",
       "range": ["#8B4513"],
       "domain": ["Permanent Grassland"],
       "scaleType": "categorical",
