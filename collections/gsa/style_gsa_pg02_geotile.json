@@ -1,17 +1,24 @@
 {
   "legend": [
     {
-      "title": "Permanent Grassland"
+      "title": "GSA parcel",
+      "range": ["#ebe2c850"],
+      "domain": ["PG"],
+      "scaleType": "categorical",
+      "markType": "rect"
     }
   ],
+
   "stroke-width": 1,
+  "stroke-color": "#b0977d50",
+
   "jsonform": {
     "type": "object",
-    "title": "Data configuration",
-    "properties": {}
+    "title": "Data configuration"
   },
-  "fill-color": ["#D7EBD7"],
-  "stroke-color": ["#D7EBD7"],
+
+  "fill-color": "#b0977d50",
+  
   "tooltip": [
     { "id": "psl_kodas_2024", "title": "2024 PG Code" },
     { "id": "classification_2024", "title": "2024 PG Class" },
