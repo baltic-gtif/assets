@@ -1,9 +1,8 @@
 {
   "legend": [
     {
-      "title": "GSA parcel",
       "range": ["#8B4513"],
-      "domain": ["PG"],
+      "domain": ["Permanent Grassland"],
       "scaleType": "categorical",
       "markType": "rect"
     }
