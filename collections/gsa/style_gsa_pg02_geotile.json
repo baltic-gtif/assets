@@ -4,34 +4,22 @@
       "title": "Permanent Grassland"
     }
   ],
-
   "stroke-width": 1,
-
   "jsonform": {
     "type": "object",
     "title": "Data configuration",
-    "properties": {      
-    }
+    "properties": {}
   },
-
-  "fill-color": [
-    "#D7EBD7"
-  ],
-
-  "stroke-color": [
-    "#D7EBD7"
-  ],
-
+  "fill-color": ["#D7EBD7"],
+  "stroke-color": ["#D7EBD7"],
   "tooltip": [
-    { "id": "psl_kodas_2024", "title": "PG Type" },
-    { "id": "classification_2024", "title": "PG Type" },
-    { "id": "id_2024", "title": "Internal ID", "decimals": 0 },
-    { "id": "area_ha_2024", "title": "Parcel area (ha)", "decimals": 1 },
-    
-    { "id": "psl_kodas_2025", "title": "PG Type" },
-    { "id": "classification_2025", "title": "PG Type" },
-    { "id": "id_2025", "title": "Internal ID", "decimals": 0 },
-    { "id": "area_ha_2025", "title": "Parcel area (ha)", "decimals": 1 },
-  ],
-
+    { "id": "psl_kodas_2024", "title": "2024 PG Code" },
+    { "id": "classification_2024", "title": "2024 PG Class" },
+    { "id": "id_2024", "title": "2024 Internal ID", "decimals": 0 },
+    { "id": "area_ha_2024", "title": "2024 Area (ha)", "decimals": 1 },
+    { "id": "psl_kodas_2025", "title": "2025 PG Code" },
+    { "id": "classification_2025", "title": "2025 PG Class" },
+    { "id": "id_2025", "title": "2025 Internal ID", "decimals": 0 },
+    { "id": "area_ha_2025", "title": "2025 Area (ha)", "decimals": 1 }
+  ]
 }
