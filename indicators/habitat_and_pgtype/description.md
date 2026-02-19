@@ -9,3 +9,6 @@ The way PGs are managed, whether through mowing or livestock grazing, has a majo
 ## Data Sources
 - **PG parcels** from the open governmental IACS GSA data, managed by the National Paying Agency of Lithuania (NMA).
 - **Habitat** data from publicly available Lithuanian datasets published in accordance with the INSPIRE Directive.
+
+## Legend description:
+[Code description PDF](https://workspace-ui-public.baltic-gtif.hub-otc.eox.at/api/public/share/public-4wazei3y-02/NCS/Code_description_Lithuania.pdf)
