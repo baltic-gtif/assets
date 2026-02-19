@@ -2,7 +2,7 @@
   "legend": [
     {
       "title": "GSA parcel",
-      "range": ["#ebe2c850"],
+      "range": ["#8B4513"],
       "domain": ["PG"],
       "scaleType": "categorical",
       "markType": "rect"
