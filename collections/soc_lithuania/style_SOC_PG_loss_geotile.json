@@ -119,18 +119,18 @@
   "tooltip": [
     { "id": "id_year", "title": "Internal IACS-ID", "decimals": 0},
     
-    {"id": "area_ha_year", "title": "Parcel Size (ha)", "decimals": 1},
+    {"id": "area_ha_year", "title": "Parcel Size (ha)", "decimals": 0},
     {
       "id"   : "carbon_aw_mean_gsocseq_tyear",
-      "title": "Existing SOC [t/ha]", "decimals": 2
+      "title": "Existing SOC [t/ha]", "decimals": 0
     },
     {
       "id"   : "carbon_aw_mean_gsocseq_tyear_afterloss",
-      "title": "Soc content after loss [t/ha]", "decimals": 2
+      "title": "Soc content after loss [t/ha]", "decimals": 0
     },
     {
       "id"   : "carbon_aw_mean_gsocseq_tyear_afterloss_value",
-      "title": "Estimated value of SOC content after loss [€/ha]", "decimals": 2
+      "title": "Estimated value of SOC content after loss [€/ha]", "decimals": 0
     }
   ],
   "variables": {"metric": "carbon_aw_mean_gsocseq_tyear"} 
