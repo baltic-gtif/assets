@@ -19,7 +19,7 @@
         "#d4d4d4", "#a3a3a3", "#737373", "#525252", "#262626", "#0a0a0a"
       ],
     "domain": [
-      "0-30",">30-45",">45-50", ">50-75",">75-100" ,">100"
+      ">0-30",">30-45",">45-50", ">50-75",">75-100" ,">100"
     ],
       "scaleType": "categorical",
       "markType": "rect",
@@ -27,8 +27,8 @@
     },
     {
       "title": "Estimated value of SOC content after loss [€/ha]",
-      "range": ["#005ea0", "#fbb4b9", "#f768a1", "#b5179e", "#10002b"],
-      "domain": ["<75",">75-900",">900-1200",">1200-1500",">1500"],
+      "range": ["#e0d1ff", "#be95ff", "#9d66ff", "#7822ed", "#5610ad", "#35066b"],
+      "domain": ["0-800",">800-1000",">1000-1100",">1100-1200",">1200-1350",">1350"],
       "scaleType": "categorical",
       "markType": "rect",
       "boundTo": {"key": "metric", "value": "carbon_aw_mean_gsocseq_tyear_afterloss_value"}
@@ -72,7 +72,7 @@
       [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 1100 ], "#9d66ff", 
       [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 1200 ], "#7822ed", 
       [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 1350 ], "#5610ad", 
-      [ ">", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 1250 ], "#35066b", 
+      [ ">", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 1350 ], "#35066b", 
       
       [0, 0, 0, 0]
     ],
