@@ -2,7 +2,7 @@
   "legend": [
     {
       "title": "Parcel Type",
-      "range": ["#fff2cc80"],
+      "range": ["#faf5e880"],
       "domain": ["Permanent Grassland"],
       "scaleType": "categorical",
       "markType": "rect"
@@ -10,7 +10,7 @@
   ],
 
   "stroke-width": 2,
-  "stroke-color": "#fff2cc80",
+  "stroke-color": "#faf5e880",
 
   "jsonform": {
     "type": "object",
