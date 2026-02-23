@@ -2,7 +2,7 @@
 {
   "legend": [
     {
-      "title": "Existing SOC content in Tonnes for each individual parcel [t/ha]",
+      "title": "Existing SOC content [t/ha]",
       "range": ["#ede0e0", "#bebebe", "#9b9898", "#6c6767", "#3c3636"],
       "domain": [
         "<30",">30-200",">200-350",">350-7500",">7500"
@@ -48,7 +48,7 @@
         ],
         "options": {
           "enum_titles": [
-            "Existing SOC content in Tonnes for each individual parcel [t/ha]",
+            "Existing SOC content [t/ha]",
             "Soc content after loss [t/ha]",
             "Estimated value of SOC content after loss [€/ha]"
           ]
@@ -122,15 +122,15 @@
     {"id": "area_ha_year", "title": "Parcel Size (ha)", "decimals": 1},
     {
       "id"   : "carbon_aw_mean_gsocseq_tyear",
-      "title": "Existing SOC [t/ha]", "decimals": 0
+      "title": "Existing SOC [t/ha]", "decimals": 2
     },
     {
       "id"   : "carbon_aw_mean_gsocseq_tyear_afterloss",
-      "title": "Soc content after loss [t/ha]", "decimals": 4
+      "title": "Soc content after loss [t/ha]", "decimals": 2
     },
     {
       "id"   : "carbon_aw_mean_gsocseq_tyear_afterloss_value",
-      "title": "carbon_aw_mean_gsocseq_tyear_afterloss_value [€/ha]", "decimals": 4
+      "title": "Estimated value of SOC content after loss [€/ha]", "decimals": 2
     }
   ],
   "variables": {"metric": "carbon_aw_mean_gsocseq_tyear"} 
