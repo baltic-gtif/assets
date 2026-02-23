@@ -28,8 +28,6 @@
     { "id": "psl_kodas_2025", "title": "2025 PG Code" },
     { "id": "classification_2025", "title": "2025 PG Class" },
     { "id": "id_2025", "title": "2025 Internal ID", "decimals": 0 },
-    { "id": "area_ha_2025", "title": "2025 Area (ha)", "decimals": 1 },
-    
-    { "id": "area_ha_2025", "title": "TEST 2025 Area (m2)", "decimals": 2 , "value": ["*", ["get", "area_ha_2025"], 10000]}    
+    { "id": "area_ha_2025", "title": "2025 Area (ha)", "decimals": 1 }   
   ]
 }
