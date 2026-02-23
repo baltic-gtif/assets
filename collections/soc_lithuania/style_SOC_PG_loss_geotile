@@ -1,0 +1,137 @@
+
+{
+  "legend": [
+    {
+      "title": "Existing SOC content in Tonnes for each individual parcel [t/ha]",
+      "range": ["#ede0e0", "#bebebe", "#9b9898", "#6c6767", "#3c3636"],
+      "domain": [
+        "<30",">30-200",">200-350",">350-7500",">7500"
+      ],
+      "scaleType": "categorical",
+      "markType": "rect",
+      "boundTo": {"key": "metric", "value": "carbon_aw_mean_gsocseq_tyear"}
+    },
+    {
+      "title": "Soc content after loss [t/ha]",
+      "range": [
+        "#005ea0", "#ffcccc",  "#ff3232", "#ff0000", "#cc0000", "#7f0000", "#330000"
+      ],
+    "domain": [
+      "<0",">0-0.5",">0.5-1",">1-2",">2-3", ">3-5",">5"
+    ],
+      "scaleType": "categorical",
+      "markType": "rect",
+      "boundTo": {"key": "metric", "value": "carbon_aw_mean_gsocseq_tyear_afterloss"}
+    },
+    {
+      "title": "Estimated value of SOC content after loss [€/ha]",
+      "range": ["#005ea0", "#fbb4b9", "#f768a1", "#b5179e", "#10002b"],
+      "domain": ["<0", ">0-4", ">4-7", ">7-127", ">127"],
+      "scaleType": "categorical",
+      "markType": "rect",
+      "boundTo": {"key": "metric", "value": "carbon_aw_mean_gsocseq_tyear_afterloss_value"}
+    }
+  ],
+  "stroke-width": 3,
+  "stroke-color": "#0dc38e50",
+  "jsonform": {
+    "type": "object",
+    "title": "Data configuration",
+    "properties": {
+      "metric": {
+        "title": "Metric",
+        "type": "string",
+        "enum": [
+          "carbon_aw_mean_gsocseq_tyear",
+          "carbon_aw_mean_gsocseq_tyear_afterloss",
+          "carbon_aw_mean_gsocseq_tyear_afterloss_value"
+        ],
+        "options": {
+          "enum_titles": [
+            "Existing SOC content in Tonnes for each individual parcel [t/ha]",
+            "Soc content after loss [t/ha]",
+            "Estimated value of SOC content after loss [€/ha]"
+          ]
+        },
+        "default": "carbon_aw_mean_gsocseq_tyear"
+      }
+    }
+  },
+  "fill-color": [
+    "case",
+    [ "==", ["var", "metric"], "carbon_aw_mean_gsocseq_tyear_afterloss_value" ],
+    [
+      "case",
+      [ "!", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"] ],
+      [0, 0, 0, 0],
+      [ "<", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 0],
+      "#005ea0",
+      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 4 ],
+      "#fbb4b9",
+      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 7 ],
+      "#f768a1",
+      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 127 ],
+      "#b5179e",
+      [ ">", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 127 ],
+      "#10002b",
+      [0, 0, 255, 1]
+    ],
+    [ "==", ["var", "metric"], "carbon_aw_mean_gsocseq_tyear" ],
+    [
+      "case",
+      [ "!", ["get", "carbon_aw_mean_gsocseq_tyear"] ],
+      [0, 0, 0, 0],
+      [ "<", ["get", "carbon_aw_mean_gsocseq_tyear"], 30 ],
+      [237, 224, 224, 1],
+      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear"], 200 ],
+      [190, 190, 190, 1],
+      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear"], 350 ],
+      [155, 152, 152, 1],
+      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear"], 7500 ],
+      [108, 103, 103, 1],
+      [ ">", ["get", "carbon_aw_mean_gsocseq_tyear"], 7500 ],
+      [60, 54, 54, 1],
+      [0, 0, 255, 1]
+    ],
+    [ "==", ["var", "metric"], "carbon_aw_mean_gsocseq_tyear_afterloss" ],
+    [
+      "case",
+      [ "!", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss"] ],
+      [0, 0, 0, 0],
+      ["<", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss"], 0],
+      "#005ea088",
+      ["<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss"], 0.5],
+      "#ffcccc",
+      ["<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss"], 1],
+      "#ff3232",
+      ["<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss"], 2],
+      "#ff0000",
+      ["<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss"], 3],
+      "#cc0000",
+      ["<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss"], 5],
+      "#7f0000",
+      [">", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss"], 5],
+      "#330000",
+      [0, 0, 0, 0] 
+    ],
+    [215, 235, 215, 0.25]
+  ],
+  "tooltip": [
+    { "id": "id_year", "title": "Internal IACS-ID", "decimals": 0},
+    
+    {"id": "area_ha_year", "title": "Parcel Size (ha)", "decimals": 1},
+    {
+      "id"   : "carbon_aw_mean_gsocseq_tyear",
+      "title": "Existing SOC [t/ha]", "decimals": 0
+    },
+    {
+      "id"   : "carbon_aw_mean_gsocseq_tyear_afterloss",
+      "title": "Soc content after loss [t/ha]", "decimals": 4
+    },
+    {
+      "id"   : "carbon_aw_mean_gsocseq_tyear_afterloss_value",
+      "title": "carbon_aw_mean_gsocseq_tyear_afterloss_value [€/ha]", "decimals": 4
+    }
+  ],
+  "variables": {"metric": "carbon_aw_mean_gsocseq_tyear"} 
+}
