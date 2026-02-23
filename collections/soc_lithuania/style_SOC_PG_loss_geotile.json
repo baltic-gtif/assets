@@ -67,11 +67,11 @@
       [ "!", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"] ], [0, 0, 0, 0],
       [ "<", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 0 ], [231, 201, 255, 0.25],
       
-      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 900 ], "#e0d1ff", 
+      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 800 ], "#e0d1ff", 
       [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 1000], "#be95ff", 
-      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 1000 ], "#9d66ff", 
-      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 1100 ], "#7822ed", 
-      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 1250 ], "#5610ad", 
+      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 1100 ], "#9d66ff", 
+      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 1200 ], "#7822ed", 
+      [ "<=", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 1350 ], "#5610ad", 
       [ ">", ["get", "carbon_aw_mean_gsocseq_tyear_afterloss_value"], 1250 ], "#35066b", 
       
       [0, 0, 0, 0]
