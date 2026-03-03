@@ -135,6 +135,10 @@
     {
       "id"   : "carbon_aw_mean_gsocseq_tyear_afterloss_value",
       "title": "Estimated value of SOC content after loss [€/ha]", "decimals": 1
+    },
+    {
+      "id"   : "tyear_value",
+      "title": "Estimated value of SOC content [€/ha]", "decimals": 1
     }
   ],
   "variables": {"metric": "carbon_aw_mean_gsocseq_tyear"} 
