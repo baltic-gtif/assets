@@ -4,6 +4,7 @@ The indicator presents various grided soil layers of predictions, assigned to ag
 - Existing SOC content [t/parcel]
 - Annual SOC sequestration potential [t/y/parcel]
 - Estimated value of existing SOC content [€/parcel]
+- Estimated value of the annual SOC sequestration potential [€/y/parcel]
 - Possible SOC content after 20 years of conventional land management {until 2045} [t/parcel]
 - Possible SOC content under 20 years of sustainable soil management {until 2045} [t/parcel]
 - Estimated value increase under 20 years of sustainable soil management {until 2045} [€/parcel]
