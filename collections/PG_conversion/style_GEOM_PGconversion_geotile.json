@@ -74,15 +74,7 @@
   ],
 
   "tooltip": [
-    { "id": "id_year_x1", "title": "Internal ID - 2025" , "decimals": 0},
-    { "id": "id_year_x", "title": "Internal ID - 2024" , "decimals": 0},
-    { "id": "psl_kodas_year_x", "title": "Type - 2024" },
-    { "id": "psl_kodas_year_x1", "title": "Type - 2025" },
-    { "id": "classification_year_x", "title": "Category - 2024" },
-    { "id": "classification_year_x1", "title": "Category - 2025" },
-    { "id": "source_file", "title": "Evolution - Geometric" },
-    { "id": "conversion_type", "title": "Evolution - Thematic" },
-    { "id": "area_ha_year_x", "title": "Parcel area (ha)" , "decimals": 1}
+    { "id": "source_file", "title": "Evolution - Geometric" }
   ],
 
   "variables": {
