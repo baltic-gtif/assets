@@ -1,0 +1,142 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Percentage of area by Habitat Type",
+  "width": "container",
+  "autosize": {"type": "fit-x", "contains": "padding"},
+  "data": {
+    "name": "habitat_typePG_lithuania"
+  },
+ 
+  "spacing": 40,
+  "config": {
+    "view": {"stroke": "transparent"},
+    "padding": {"left": 10, "top": 10, "right": 10, "bottom": 10},
+    "title": {
+      "anchor": "start",
+      "frame": "container",
+      "offset": 10
+    }
+  },
+  "vconcat": [
+    {
+      "title": {
+        "text": "1. Permanent Grassland Distribution by Parcel Code",
+        "subtitle": "Relative share of each parcel code as a percentage of the total Permanent Grassland area (ha)",
+        "subtitleColor": "#666"
+      },
+      "width": "container",
+      "height": 220,
+      "transform": [
+        {
+          "aggregate": [{"op": "sum", "field": "area_ha", "as": "total_area_type"}],
+          "groupby": ["psl_kodas"]
+        },
+        {
+          "window": [{"op": "sum", "field": "total_area_type", "as": "grand_total"}],
+          "frame": [null, null]
+        },
+        {"calculate": "datum.total_area_type / datum.grand_total", "as": "percent"},
+        {"calculate": "format(datum.total_area_type, '.1f') + 'ha'", "as": "area_label"}
+      ],
+      "layer": [
+        {
+          "mark": {"type": "bar", "tooltip": true},
+          "encoding": {
+            "x": {"field": "psl_kodas", "type": "nominal", "title": "Parcel Code", "axis": {"labelAngle": 0}},
+            "y": {
+              "field": "percent", 
+              "type": "quantitative", 
+              "title": "Percentage", 
+              "axis": {
+                "format": ".0%",
+                "minExtent": 60 
+              }
+            },
+            "color": {"field": "psl_kodas", "type": "nominal", "scale": {"scheme": "viridis"}, "legend": {"title": "Parcel Code", "orient": "right"}}
+          }
+        },
+        {
+          "mark": {"type": "text", "dy": -10, "baseline": "bottom", "fontWeight": "bold"},
+          "encoding": {
+            "x": {"field": "psl_kodas", "type": "nominal"},
+            "y": {"field": "percent", "type": "quantitative"},
+            "text": {"field": "area_label", "type": "nominal"}
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "2. Estimated Habitat Area (ha) by Parcel Code and Habitat Type",
+        "subtitle": [
+          "Summed hectare values for habitat-parcel combinations based on percentage share.",
+          "Note: Total values aggregate across all parcels of the same type.",
+          "Total area may exceed parcel size due to potential habitat overlaps."
+        ],
+        "subtitleColor": "#666"
+      },
+      "width": "container",
+      "height": 220,
+      "transform": [
+        {"fold": ["habitat_1", "habitat_2", "habitat_3", "habitat_4"], "as": ["h_k", "h_n"]},
+        {"fold": ["shared_1", "shared_2", "shared_3", "shared_4"], "as": ["s_k", "s_v"]},
+        {"filter": "substring(datum.h_k, 8) == substring(datum.s_k, 7)"},
+        {"filter": "datum.h_n != null && datum.s_v > 0"},
+        {"calculate": "datum.area_ha * (datum.s_v / 100)", "as": "actual_area"},
+        {
+          "aggregate": [{"op": "sum", "field": "actual_area", "as": "summed_habitat_area"}],
+          "groupby": ["psl_kodas", "h_n"]
+        },
+        {"calculate": "format(datum.summed_habitat_area, '.1f') + ' ha'", "as": "label"}
+      ],
+      "layer": [
+        {
+          "mark": {"type": "rect", "stroke": "white", "strokeWidth": 1, "tooltip": true},
+          "encoding": {
+            "x": {"field": "psl_kodas", "type": "nominal", "title": "Parcel Code"},
+            "y": {
+              "field": "h_n",
+              "type": "nominal",
+              "title": "Habitat",
+              "axis": {
+                "labels": false, 
+                "ticks": false,
+                "minExtent": 60
+              }
+            },
+            "color": {
+              "field": "h_n",
+              "type": "nominal",
+              "scale": {"scheme": "tableau20"},
+              "legend": {
+                "title": "Habitat Name (by row)",
+                "orient": "bottom",
+                "columns": 1,
+                "labelLimit": 1000,
+                "symbolType": "square",
+                "offset": 25,
+                "padding": 10
+              }
+            },
+            "opacity": {
+              "field": "summed_habitat_area",
+              "type": "quantitative",
+              "scale": {"range": [0.4, 1]},
+              "legend": null
+            }
+          }
+        },
+        {
+          "mark": {"type": "text", "fontWeight": "bold", "color": "black", "baseline": "middle"},
+          "encoding": {
+            "x": {"field": "psl_kodas", "type": "nominal"},
+            "y": {"field": "h_n", "type": "nominal"},
+            "text": {"field": "label", "type": "nominal"}
+          }
+        }
+      ]
+    }
+  ],
+  "resolve": {"scale": {"color": "independent"}},
+  "background": "transparent"
+}
