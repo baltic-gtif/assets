@@ -93,7 +93,7 @@
         {
           "mark": {"type": "rect", "stroke": "white", "strokeWidth": 1, "tooltip": true},
           "encoding": {
-            "x": {"field": "psl_kodas", "type": "nominal", "title": "Parcel Code"},
+            "x": {"field": "psl_kodas", "type": "nominal", "title": "Parcel Code", "axis": {"labelAngle": 0}},
             "y": {
               "field": "h_n",
               "type": "nominal",
