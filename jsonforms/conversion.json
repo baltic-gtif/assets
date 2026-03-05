@@ -1,0 +1,21 @@
+{
+    "options": {
+        "execute": true
+    },
+    "type": "object",
+    "properties": {
+        "bbox": {
+            "type": "array",
+            "title": "Select area (bbox) on map",
+            "options": {
+                "autoStartSelection": false,
+                "drawtools": {
+                    "for": "eox-map#main",
+                    "type": "Box", 
+                    "continuous": true
+                }
+            },
+            "format": "bounding-box"
+        }
+    }
+}
