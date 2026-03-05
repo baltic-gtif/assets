@@ -1,0 +1,296 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.2.0.json",
+  "description": "Percentage of area by Habitat Type",
+  "width": "container",
+  "autosize": {"type": "fit-x", "contains": "padding"},
+  "data": {
+    "name": "timeseries"
+  },
+    "spacing": 40,
+    "vconcat": [
+
+
+    {
+    "title": {
+    "text": "Summary of Permanent Grassland (PG) Changes",
+    "subtitle": "Comparison of total hectares for annual PG totals and conversion losses/increases",
+    "anchor": "start",
+    "subtitleColor": "#666"
+  },
+  "width": 420,
+  "height": 250,
+  "transform": [
+    {
+      "fold": [
+        "lt_2025_2024_conversion_pg",
+        "lt_2024_2025_conversion_pg",
+        "lt_2024_gsa_pg02ha",
+        "lt_2025_gsa_pg02ha"
+      ],
+      "as": ["dataset", "records"]
+    },
+    {"flatten": ["records"]},
+    {
+      "calculate": "datum.dataset === 'lt_2025_2024_conversion_pg' ? datum.records.area_ha_2025 : datum.dataset === 'lt_2024_2025_conversion_pg' ? datum.records.area_ha_2024 : datum.dataset === 'lt_2024_gsa_pg02ha' ? datum.records.area_ha_2024 : datum.dataset === 'lt_2025_gsa_pg02ha' ? datum.records.area_ha_2025 : 0",
+      "as": "area_ha"
+    },
+    {
+      "aggregate": [{"op": "sum", "field": "area_ha", "as": "total_area_ha"}],
+      "groupby": ["dataset"]
+    },
+    {
+      "calculate": "datum.dataset === 'lt_2025_2024_conversion_pg' ? '1' : datum.dataset === 'lt_2024_2025_conversion_pg' ? '2' : datum.dataset === 'lt_2024_gsa_pg02ha' ? '3' : '4'",
+      "as": "short_id"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "short_id", 
+      "type": "nominal", 
+      "title": "Dataset ID",
+      "axis": {"labelAngle": 0}
+    },
+    "y": {
+      "field": "total_area_ha",
+      "type": "quantitative",
+      "title": "Total Area (ha)"
+    },
+    "color": {
+  "field": "dataset",
+  "title": "Dataset",
+  "type": "nominal",
+  "scale": {
+    "domain": [
+      "lt_2025_2024_conversion_pg",
+      "lt_2024_2025_conversion_pg",
+      "lt_2024_gsa_pg02ha",
+      "lt_2025_gsa_pg02ha"
+    ],
+    "range": [
+      "#2ca02c", 
+      "#ff7f0e", 
+      "#1f77b4", 
+      "#1c616e"
+    ]
+  },
+  "legend": {
+    "labelExpr": "{'lt_2025_2024_conversion_pg': '1.PG Increase 2024-2025', 'lt_2024_2025_conversion_pg': '2.PG Loss 2024-2025', 'lt_2024_gsa_pg02ha': '3.PG 2024','lt_2025_gsa_pg02ha':'4.PG 2025'}[datum.value]"
+  }
+},
+    "tooltip": [
+      {"field": "dataset", "type": "nominal", "title": "Dataset Name"},
+      {"field": "total_area_ha", "type": "quantitative", "format": ".2f","title": "Total Area (ha)"}
+    ]
+  },
+  "mark": {"type": "bar", "cornerRadiusEnd": 4}
+},
+
+
+
+
+
+{
+  "title": {
+    "text": "Land-Use Transition of lost Permanent Grassland parcels",
+    "subtitle": "Tracking the 2024 PG area as it converts to new classifications in 2025 (Area in ha)",
+    "anchor": "start",
+    "subtitleColor": "#666"
+  },
+  "width": 420,
+  "height": 250,
+  "data": {"name": "timeseries"},
+  "transform": [
+    {
+      "fold": ["lt_2024_2025_conversion_pg"],
+      "as": ["dataset", "records"]
+    },
+    {"flatten": ["records"]},
+    {
+      "calculate": "datum.records.classification_2024 + ' to ' + datum.records.classification_2025",
+      "as": "evolution_pair"
+    },
+    {
+      "calculate": "[{'year': 2024, 'classification': datum.records.classification_2024, 'area_ha': datum.records.area_ha_year_x}, {'year': 2025, 'classification': datum.records.classification_2025, 'area_ha': datum.records.area_ha_year_x}]",
+      "as": "evolution"
+    },
+    {"flatten": ["evolution"]},
+    {"calculate": "datum.evolution.year", "as": "year"},
+    {"calculate": "datum.evolution.classification", "as": "classification"},
+    {"calculate": "datum.evolution.area_ha", "as": "area_ha"}
+  ],
+  "layer": [
+    
+    {
+      "description": "Points aggregated by classification and year",
+      "mark": {"type": "point", "filled": true, "size": 100},
+      "encoding": {
+        "x": {"field": "year",
+      "title": "Year",      
+       "type": "nominal"},
+        "y": {
+          "aggregate": "sum", 
+          "field": "area_ha", 
+          "title": "Area (ha)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "classification",
+          "type": "nominal",
+          "scale": {"scheme": "tableau20"},
+          "legend": {"title": "Classification"}
+        },
+        "tooltip": [
+          {"field": "year", "title": "Year"},
+          {"field": "classification", "title": "Type"},
+          {"aggregate": "sum", "field": "area_ha", "format": ".2f", "title": "Total Category Area (ha)"}
+        ]
+      }
+    }
+  ]
+},
+
+
+
+{
+  "title": {
+    "text": "Land-Use Transition of new Permanent Grassland parcels",
+    "subtitle": "Tracking the 2024 (non PG) area as it converts to new PG classifications in 2025 (Area in ha)",
+    "anchor": "start",
+    "subtitleColor": "#666"
+  },
+  "width": 420,
+  "height": 250,
+  "data": {"name": "timeseries"},
+  "transform": [
+    {
+      "fold": ["lt_2025_2024_conversion_pg"],
+      "as": ["dataset", "records"]
+    },
+    {"flatten": ["records"]},
+    {
+      "calculate": "datum.records.classification_2024 + ' to ' + datum.records.classification_2025",
+      "as": "evolution_pair"
+    },
+    {
+      "calculate": "[{'year': 2024, 'classification': datum.records.classification_2024, 'area_ha': datum.records.area_ha_year_x}, {'year': 2025, 'classification': datum.records.classification_2025, 'area_ha': datum.records.area_ha_year_x}]",
+      "as": "evolution"
+    },
+    {"flatten": ["evolution"]},
+    {"calculate": "datum.evolution.year", "as": "year"},
+    {"calculate": "datum.evolution.classification", "as": "classification"},
+    {"calculate": "datum.evolution.area_ha", "as": "area_ha"}
+  ],
+  "layer": [
+    
+    {
+      "description": "Points aggregated by classification and year",
+      "mark": {"type": "point", "filled": true, "size": 100},
+      "encoding": {
+        "x": {"field": "year",
+      "title": "Year",      
+       "type": "nominal"},
+        "y": {
+          "aggregate": "sum", 
+          "field": "area_ha", 
+          "title": "Area (ha)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "classification",
+          "type": "nominal",
+          "scale": {"scheme": "tableau20"},
+          "legend": {"title": "Classification"}
+        },
+        "tooltip": [
+          {"field": "year", "title": "Year"},
+          {"field": "classification", "title": "Type"},
+          {"aggregate": "sum", "field": "area_ha", "format": ".2f", "title": "Total Category Area (ha)"}
+        ]
+      }
+    }
+  ]
+},
+
+{
+  "title": {
+    "text": "Soil Organic Carbon (SOC) by Parcel Size",
+    "subtitle": "Comparison of SOC content (tonnes) relative to parcel area (ha) before and after recorded land-use loss",
+    "anchor": "start",
+    "subtitleColor": "#666"
+  },
+  "width":  420,
+  "height": 500,
+  "transform": [
+    {
+      "fold": ["lt_2024_soc_pg_loss", "lt_2025_soc_pg_loss"],
+      "as": ["dataset", "records"]
+    },
+    {"flatten": ["records"]},
+    {
+      "calculate": "datum.dataset === 'lt_2024_soc_pg_loss' ? '2024' : '2025'",
+      "as": "year"
+    },
+    {"calculate": "datum.records.id_year", "as": "parcel_id"},
+    {"calculate": "datum.records.area_ha_year", "as": "parcel_area"},
+    {
+      "calculate": "[{'status': 'Initial', 'val': datum.records.soctot_parcel_gsocseq_tyear}, {'status': 'After Loss', 'val': datum.records.soctot_parcel_gsocseq_tyear_afterloss}]",
+      "as": "soc_points"
+    },
+    {"flatten": ["soc_points"]},
+    {
+      "calculate": "datum.year + ' - ' + datum.soc_points.status",
+      "as": "legend_label"
+    },
+    {"filter": "datum.soc_points.val != null"}
+  ],
+  "mark": {
+    "type": "point", 
+    "filled": true, 
+    "size": 50, 
+    "opacity": 0.5
+  },
+  "encoding": {
+    "x": {
+      "field": "soc_points.val",
+      "type": "quantitative",
+      "title": "SOC Content (tonnes)",
+      "scale": {"zero": false}
+    },
+    "yOffset": {
+      "field": "soc_points.status",
+      "type": "nominal"
+    },
+    "y": {
+      "field": "parcel_area",
+      "type": "quantitative",
+      "title": "Parcel Area (ha)",
+      "scale": {"zero": false}
+    },
+    "color": {
+      "field": "legend_label",
+      "type": "nominal",
+      "title": "Year & Status",
+      "scale": {
+        "domain": ["2024 - Initial", "2024 - After Loss", "2025 - Initial", "2025 - After Loss"],
+        "range": ["#a1d99b", "#31a354", "#fc9272", "#de2d26"]
+      }
+    },
+    "tooltip": [
+      {"field": "parcel_id", "title": "Parcel ID"},
+      {"field": "parcel_area", "title": "Area (ha)", "format": ".2f"},
+      {"field": "year", "title": "Year"},
+      {"field": "soc_points.status", "title": "Status"},
+      {"field": "soc_points.val", "title": "SOC Value (t)", "format": ".2f"}
+    ]
+  },
+  "config": {
+    "axis": {"grid": true}
+  }
+}
+    
+],
+  "resolve": {
+    "scale": {"color": "independent"}
+  },
+  "background": "transparent"
+}
