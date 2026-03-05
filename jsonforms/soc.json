@@ -1,0 +1,23 @@
+{
+    "options": {
+        "execute": true
+    },
+    "type": "object",
+    "properties": {
+        "location": {
+          "type": "array",
+          "title": "Click a parcel on the map",
+          "items": {
+            "type": "number"
+          },
+          "options": {
+            "autoStartSelection": false,
+            "drawtools": {
+              "for": "eox-map#main",
+              "type": "Point"
+            }
+          },
+          "format": "point"
+        }
+    }
+}
