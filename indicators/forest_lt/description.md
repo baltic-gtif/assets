@@ -2,7 +2,7 @@
 
 Tree cover loss estimates, derived from Sentinel-1 polarimetry
 SAR data pre-processed with SAGRIS production system
-(http://www.sagris.eu), cover all scenarios of natural and man-made 
+(https://www.sagris.eu), cover all scenarios of natural and man-made 
 causes of the loss of trees, including natural tree fall due to aging,
 severe storms, forestry maintenance activities, as well as legal or
 illegal timber production. This service has high sensitivity (minimum
