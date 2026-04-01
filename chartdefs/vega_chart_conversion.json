@@ -8,172 +8,155 @@
   },
     "spacing": 40,
     "vconcat": [
-
-
     {
-    "title": {
-    "text": "Summary of Permanent Grassland (PG) Changes",
-    "subtitle": [
-      "Comparison of ha total for annual PG totals and conversion loss/increase.",
-      "( % values calculated with 2024 area tot = 'PG 2024' )"
-    ],
-    "anchor": "start",
-    "subtitleColor": "#666"
-  },
-  "width": 420,
-  "height": 250,
-  "transform": [
-    {
-      "fold": [
-        "lt_2025_2024_conversion_pg",
-        "lt_2024_2025_conversion_pg",
-        "lt_2024_gsa_pg02ha",
-        "lt_2025_gsa_pg02ha"
+      "title": {
+        "text": "Summary of Permanent Grassland (PG) Changes",
+        "subtitle": [
+          "Comparison of ha total for annual PG totals and conversion loss/increase.",
+          "( % values calculated with 2024 area tot = 'PG 2024' )"
+        ],
+        "anchor": "start",
+        "subtitleColor": "#666"
+      },
+      "width": 420,
+      "height": 250,
+      "transform": [
+        {
+          "fold": [
+            "lt_2025_2024_conversion_pg",
+            "lt_2024_2025_conversion_pg",
+            "lt_2024_gsa_pg02ha",
+            "lt_2025_gsa_pg02ha"
+          ],
+          "as": ["dataset", "records"]
+        },
+        {"flatten": ["records"]},
+        {
+          "calculate": "datum.dataset === 'lt_2025_2024_conversion_pg' ? datum.records.area_ha_2025 : datum.dataset === 'lt_2024_2025_conversion_pg' ? datum.records.area_ha_2024 : datum.dataset === 'lt_2024_gsa_pg02ha' ? datum.records.area_ha_2024 : datum.dataset === 'lt_2025_gsa_pg02ha' ? datum.records.area_ha_2025 : 0",
+          "as": "area_ha"
+        },
+        {
+          "aggregate": [
+            {"op": "sum", "field": "area_ha", "as": "total_area_ha"}
+          ],
+          "groupby": ["dataset"]
+        },
+        {
+          "calculate": "datum.dataset === 'lt_2025_2024_conversion_pg' ? '1' : datum.dataset === 'lt_2024_2025_conversion_pg' ? '2' : datum.dataset === 'lt_2024_gsa_pg02ha' ? '3' : '4'",
+          "as": "short_id"
+        },
+        {
+          "calculate": "datum.dataset === 'lt_2024_2025_conversion_pg' ? datum.total_area_ha : null",
+          "as": "loss_tmp"
+        },
+        {
+          "calculate": "datum.dataset === 'lt_2025_2024_conversion_pg' ? datum.total_area_ha : null",
+          "as": "gain_tmp"
+        },
+        {
+          "calculate": "datum.dataset === 'lt_2024_gsa_pg02ha' ? datum.total_area_ha : null",
+          "as": "total2024_tmp"
+        },
+        {
+          "joinaggregate": [
+            {"op": "max", "field": "loss_tmp", "as": "loss_final"},
+            {"op": "max", "field": "gain_tmp", "as": "gain_final"},
+            {"op": "max", "field": "total2024_tmp", "as": "total2024_final"}
+          ]
+        },
+        {
+          "calculate": "datum.loss_final / datum.total2024_final * 100",
+          "as": "loss_pct"
+        },
+        {
+          "calculate": "datum.gain_final / datum.total2024_final * 100",
+          "as": "gain_pct"
+        },
+        {
+          "calculate": "datum.dataset === 'lt_2025_2024_conversion_pg' ? '3' : datum.dataset === 'lt_2024_2025_conversion_pg' ? '4' : datum.dataset === 'lt_2024_gsa_pg02ha' ? '5' : '6'",
+          "as": "short_id"
+        },
+        {
+          "calculate": "format(datum.loss_pct, '.1f') + '%'",
+          "as": "loss_pct_label"
+        },
+        {
+          "calculate": "format(datum.gain_pct, '.1f') + '%'",
+          "as": "gain_pct_label"
+        }
       ],
-      "as": ["dataset", "records"]
-    },
-    {"flatten": ["records"]},
-    {
-      "calculate": "datum.dataset === 'lt_2025_2024_conversion_pg' ? datum.records.area_ha_2025 : datum.dataset === 'lt_2024_2025_conversion_pg' ? datum.records.area_ha_2024 : datum.dataset === 'lt_2024_gsa_pg02ha' ? datum.records.area_ha_2024 : datum.dataset === 'lt_2025_gsa_pg02ha' ? datum.records.area_ha_2025 : 0",
-      "as": "area_ha"
-    },
-    {
-      "aggregate": [{"op": "sum", "field": "area_ha", "as": "total_area_ha"}],
-      "groupby": ["dataset"]
-    },
-    {
-      "calculate": "datum.dataset === 'lt_2025_2024_conversion_pg' ? '1' : datum.dataset === 'lt_2024_2025_conversion_pg' ? '2' : datum.dataset === 'lt_2024_gsa_pg02ha' ? '3' : '4'",
-      "as": "short_id"
-    },
-    {
-      "calculate": "datum.dataset === 'lt_2024_2025_conversion_pg' ? datum.total_area_ha : null",
-      "as": "loss_tmp"
-    },
-    {
-      "calculate": "datum.dataset === 'lt_2025_2024_conversion_pg' ? datum.total_area_ha : null",
-      "as": "gain_tmp"
-    },
-    {
-      "calculate": "datum.dataset === 'lt_2024_gsa_pg02ha' ? datum.total_area_ha : null",
-      "as": "total2024_tmp"
-    },
-
-    {
-      "joinaggregate": [
-        {"op": "max", "field": "loss_tmp", "as": "loss_final"},
-        {"op": "max", "field": "gain_tmp", "as": "gain_final"},
-        {"op": "max", "field": "total2024_tmp", "as": "total2024_final"}
-      ]
-    },
-
-    {
-      "calculate": "datum.loss_final / datum.total2024_final * 100",
-      "as": "loss_pct"
-    },
-    {
-      "calculate": "datum.gain_final / datum.total2024_final * 100",
-      "as": "gain_pct"
-    },
-
-    {
-      "calculate": "datum.dataset === 'lt_2025_2024_conversion_pg' ? '3' : datum.dataset === 'lt_2024_2025_conversion_pg' ? '4' : datum.dataset === 'lt_2024_gsa_pg02ha' ? '5' : '6'",
-      "as": "short_id"
-    },
-    {
-      "calculate": "format(datum.loss_pct, '.1f') + '%'",
-      "as": "loss_pct_label"
-    },
-    {
-      "calculate": "format(datum.gain_pct, '.1f') + '%'",
-      "as": "gain_pct_label"
-    }
-  ],
-
-  "layer": [
-    {
-      "mark": {"type": "bar", "cornerRadiusEnd": 4},
-      "encoding": {
-        "x": {
-          "field": "short_id",
-          "type": "nominal",
-          "title": "Dataset ID",
-          "axis": {"labelAngle": 0}
-        },
-        "y": {
-          "field": "total_area_ha",
-          "type": "quantitative",
-          "title": "Total Area (ha)"
-        },
-        "color": {
-          "field": "dataset",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              "lt_2025_2024_conversion_pg",
-              "lt_2024_2025_conversion_pg",
-              "lt_2024_gsa_pg02ha",
-              "lt_2025_gsa_pg02ha"
-            ],
-            "range": [
-              "#2ca02c",
-              "#ff7f0e",
-              "#1f77b4",
-              "#1f77b4"
+      "layer": [
+        {
+          "mark": {"type": "bar", "cornerRadiusEnd": 4},
+          "encoding": {
+            "x": {
+              "field": "short_id",
+              "type": "nominal",
+              "title": "Dataset ID",
+              "axis": {"labelAngle": 0}
+            },
+            "y": {
+              "field": "total_area_ha",
+              "type": "quantitative",
+              "title": "Total Area (ha)"
+            },
+            "color": {
+              "field": "dataset",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "lt_2025_2024_conversion_pg",
+                  "lt_2024_2025_conversion_pg",
+                  "lt_2024_gsa_pg02ha",
+                  "lt_2025_gsa_pg02ha"
+                ],
+                "range": ["#2ca02c", "#ff7f0e", "#1f77b4", "#1f77b4"]
+              },
+              "legend": {
+                "labelExpr": "{'lt_2025_2024_conversion_pg': 'PG Increase 2024-2025', 'lt_2024_2025_conversion_pg': 'PG Loss 2024-2025', 'lt_2024_gsa_pg02ha': 'PG 2024','lt_2025_gsa_pg02ha':'PG 2025'}[datum.value]"
+              }
+            },
+            "tooltip": [
+              {"field": "dataset", "type": "nominal", "title": "Dataset"},
+              {"field": "total_area_ha", "type": "quantitative", "title": "Total Area (ha)", "format": ",.0f"},
             ]
+          }
+        },
+        {
+          "transform": [
+            {"filter": "datum.dataset === 'lt_2024_2025_conversion_pg'"}
+          ],
+          "mark": {
+            "type": "text",
+            "dy": -12,
+            "fontSize": 12,
+            "fontWeight": "bold"
           },
-          "legend": {
-            "labelExpr": "{'lt_2025_2024_conversion_pg': 'PG Increase 2024-2025', 'lt_2024_2025_conversion_pg': 'PG Loss 2024-2025', 'lt_2024_gsa_pg02ha': 'PG 2024','lt_2025_gsa_pg02ha':'PG 2025'}[datum.value]"
+          "encoding": {
+            "x": {"field": "short_id", "type": "nominal"},
+            "y": {"field": "total_area_ha", "type": "quantitative"},
+            "text": {"field": "loss_pct_label", "type": "nominal"}
+          }
+        },
+        {
+          "transform": [
+            {"filter": "datum.dataset === 'lt_2025_2024_conversion_pg'"}
+          ],
+          "mark": {
+            "type": "text",
+            "dy": -12,
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "color": "#2ca02c"
+          },
+          "encoding": {
+            "x": {"field": "short_id", "type": "nominal"},
+            "y": {"field": "total_area_ha", "type": "quantitative"},
+            "text": {"field": "gain_pct_label", "type": "nominal"}
           }
         }
-      }
+      ]
     },
-
-    {
-      "transform": [
-        {"filter": "datum.dataset === 'lt_2024_2025_conversion_pg'"}
-      ],
-      "mark": {
-        "type": "text",
-        "dy": -12,
-        "fontSize": 12,
-        "fontWeight": "bold"
-      },
-      "encoding": {
-        "x": {"field": "short_id", "type": "nominal"},
-        "y": {"field": "total_area_ha", "type": "quantitative"},
-        "text": {
-          "field": "loss_pct_label",
-          "type": "nominal"
-        }
-      }
-    },
-
-    {
-      "transform": [
-        {"filter": "datum.dataset === 'lt_2025_2024_conversion_pg'"}
-      ],
-      "mark": {
-        "type": "text",
-        "dy": -12,
-        "fontSize": 12,
-        "fontWeight": "bold",
-        "color": "#2ca02c"
-      },
-      "encoding": {
-        "x": {"field": "short_id", "type": "nominal"},
-        "y": {"field": "total_area_ha", "type": "quantitative"},
-        "text": {
-          "field": "gain_pct_label",
-          "type": "nominal"
-        }
-      }
-    }
-  ]
-},
-
-
-
-
 
 {
   "title": {
