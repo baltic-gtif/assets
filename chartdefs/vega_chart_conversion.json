@@ -8,7 +8,7 @@
   },
     "spacing": 40,
     "vconcat": [
-    {
+       {
       "title": {
         "text": "Summary of Permanent Grassland (PG) Changes",
         "subtitle": [
@@ -73,10 +73,6 @@
           "as": "gain_pct"
         },
         {
-          "calculate": "datum.dataset === 'lt_2025_2024_conversion_pg' ? '3' : datum.dataset === 'lt_2024_2025_conversion_pg' ? '4' : datum.dataset === 'lt_2024_gsa_pg02ha' ? '5' : '6'",
-          "as": "short_id"
-        },
-        {
           "calculate": "format(datum.loss_pct, '.1f') + '%'",
           "as": "loss_pct_label"
         },
@@ -113,12 +109,12 @@
                 "range": ["#2ca02c", "#ff7f0e", "#1f77b4", "#1f77b4"]
               },
               "legend": {
-                "labelExpr": "{'lt_2025_2024_conversion_pg': 'PG Increase 2024-2025', 'lt_2024_2025_conversion_pg': 'PG Loss 2024-2025', 'lt_2024_gsa_pg02ha': 'PG 2024','lt_2025_gsa_pg02ha':'PG 2025'}[datum.value]"
+                "labelExpr": "{'lt_2025_2024_conversion_pg': '1.PG Increase 2024-2025', 'lt_2024_2025_conversion_pg': '2.PG Loss 2024-2025', 'lt_2024_gsa_pg02ha': '3.PG 2024','lt_2025_gsa_pg02ha':'4.PG 2025'}[datum.value]"
               }
             },
             "tooltip": [
               {"field": "dataset", "type": "nominal", "title": "Dataset"},
-              {"field": "total_area_ha", "type": "quantitative", "title": "Total Area (ha)", "format": ",.0f"},
+              {"field": "total_area_ha", "type": "quantitative", "title": "Total Area (ha)", "format": ",.0f"}
             ]
           }
         },
@@ -130,7 +126,8 @@
             "type": "text",
             "dy": -12,
             "fontSize": 12,
-            "fontWeight": "bold"
+            "fontWeight": "bold",
+            "color": "#ff7f0e"
           },
           "encoding": {
             "x": {"field": "short_id", "type": "nominal"},
@@ -157,7 +154,6 @@
         }
       ]
     },
-
 {
   "title": {
     "text": "Land-Use Transition of lost Permanent Grassland parcels",
