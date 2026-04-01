@@ -45,7 +45,6 @@
       "calculate": "datum.dataset === 'lt_2025_2024_conversion_pg' ? '1' : datum.dataset === 'lt_2024_2025_conversion_pg' ? '2' : datum.dataset === 'lt_2024_gsa_pg02ha' ? '3' : '4'",
       "as": "short_id"
     },
-    // isolate values
     {
       "calculate": "datum.dataset === 'lt_2024_2025_conversion_pg' ? datum.total_area_ha : null",
       "as": "loss_tmp"
@@ -59,7 +58,6 @@
       "as": "total2024_tmp"
     },
 
-    // broadcast values
     {
       "joinaggregate": [
         {"op": "max", "field": "loss_tmp", "as": "loss_final"},
@@ -68,7 +66,6 @@
       ]
     },
 
-    // percentages and label
     {
       "calculate": "datum.loss_final / datum.total2024_final * 100",
       "as": "loss_pct"
@@ -131,7 +128,6 @@
       }
     },
 
-    // LOSS%
     {
       "transform": [
         {"filter": "datum.dataset === 'lt_2024_2025_conversion_pg'"}
@@ -152,7 +148,6 @@
       }
     },
 
-    // GAIN%
     {
       "transform": [
         {"filter": "datum.dataset === 'lt_2025_2024_conversion_pg'"}
