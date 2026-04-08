@@ -157,7 +157,9 @@
 {
   "title": {
     "text": "Land-Use Transition of lost Permanent Grassland parcels",
-    "subtitle": "Tracking the 2024 PG area as it converts to new classifications in 2025 (Area in ha)",
+    "subtitle": ["Tracking the 2024 PG area as it converts",
+      "to new classifications in 2025 (Area in ha)"
+    ],
     "anchor": "start",
     "subtitleColor": "#666"
   },
@@ -219,7 +221,9 @@
 {
   "title": {
     "text": "Land-Use Transition of new Permanent Grassland parcels",
-    "subtitle": "Tracking the 2024 (non PG) area as it converts to new PG classifications in 2025 (Area in ha)",
+    "subtitle": ["Tracking the 2024 (non PG) area as it converts",
+                "to new PG classifications in 2025 (Area in ha)"
+    ],
     "anchor": "start",
     "subtitleColor": "#666"
   },
@@ -279,12 +283,15 @@
 {
   "title": {
     "text": "Soil Organic Carbon (SOC) by Parcel Size",
-    "subtitle": "Comparison of SOC content (tonnes) relative to parcel area (ha) before and after recorded land-use loss",
+    "subtitle": [
+          "Comparison of SOC content (tonnes) relative to parcel area (ha)",
+          "before and after recorded land-use loss""
+        ],
     "anchor": "start",
     "subtitleColor": "#666"
   },
   "width":  420,
-  "height": 500,
+  "height": 400,
   "transform": [
     {
       "fold": ["lt_2024_soc_pg_loss", "lt_2025_soc_pg_loss"],
