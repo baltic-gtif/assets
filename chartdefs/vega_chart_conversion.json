@@ -284,7 +284,7 @@
   "title": {
     "text": "Soil Organic Carbon (SOC) by Parcel Size",
     "subtitle": [
-          "Comparison of SOC content (tonnes) relative to parcel area (ha)",
+          "Comparison of SOC content (tonne) relative to parcel area (ha)",
           "before and after recorded land-use loss"
         ],
     "anchor": "start",
@@ -325,7 +325,7 @@
     "x": {
       "field": "soc_points.val",
       "type": "quantitative",
-      "title": "SOC Content (tonnes)",
+      "title": "SOC Content (tonne)",
       "scale": {"zero": false}
     },
     "yOffset": {
