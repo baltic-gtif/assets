@@ -1,15 +1,9 @@
 ## Tree cover loss
 
-Tree cover loss estimates, derived from Sentinel-1 polarimetry
-SAR data pre-processed with SAGRIS production system
-(https://www.sagris.eu), cover all scenarios of natural and man-made 
-causes of the loss of trees, including natural tree fall due to aging,
-severe storms, forestry maintenance activities, as well as legal or
-illegal timber production. This service has high sensitivity (minimum
-mapping unit - 100 sq.m) and assessment of the whole winter season 2024/25 (October-April) in Baltic states (Lithuania, Latvia, Estonia). 
+Tree cover loss maps is a forest loss monitoring tool built on Sentinel-1 SAR (Synthetic Aperture Radar) satellite data, processed through the SAGRIS production system (https://www.sagris.eu). <br>
+The tool detects and maps tree cover loss across Lithuania. It captures all causes of forest loss, including natural tree death from old age, storm damage, forestry maintenance, and — most importantly — both legal and illegal timber harvesting. <br>
+The algorithm uses SAR data. Unlike optical satellites (which are blocked by clouds), Sentinel-1 uses radar, meaning it can penetrate cloud cover and collect data year-round. This is particularly valuable in Lithuania, where persistent cloud cover would otherwise limit the effectiveness of conventional optical satellites. <>
+The tool provides monthly updates during the summer season, with an additional assessment covering the full summer period (May–September 2024). The datetime control lets users scrub through time to see how forest loss events developed across the 2024 season, making it easy to track the progression of tree loss month by month. <br>
+Forest loss is displayed at the level of forestry taxation units — each unit shows the percentage of its area affected by tree loss. The minimum mapping unit is 100 m², meaning even small patches of forest loss are detectable, making this far more sensitive than many traditional monitoring systems. <br>
 
-### Tree cover loss coeficient values legend
-Vector map of SAGRIS tree loss coeficient shows coeficient values of area in hectares indicating tree loss.
-
-### Tree cover loss points layer legend
-Points layer of forest clear-cuts (incl. natural forest loss) shows the center-point locations and relative sizes of the clear-cuts.
+In short, this is a near-real-time deforestation and forest disturbance early warning tool, capable of detecting small-scale changes across an entire region through all weather conditions.
