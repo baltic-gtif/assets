@@ -1,23 +1,40 @@
 {
   "legend": [
     {
-      "title": "",
-      "range": ["#faf5e880"],
-      "domain": ["Permanent Grassland"],
+      "title": "Ecosystem Connectivity",
+      "range": [
+        "#f7fbff",
+        "#6baed6",
+        "#08306b"
+      ],
+      "domain": [
+        "0 - 3",
+        "3 - 6",
+        "6 - 10"
+      ],
       "scaleType": "categorical",
       "markType": "rect"
     }
   ],
 
-  "stroke-width": 2,
-  "stroke-color": "#faf5e880",
+  "stroke-width": 1,
+  "stroke-color": "#333333",
 
   "jsonform": {
     "type": "object",
     "title": "Data configuration"
   },
 
-  "fill-color": "#00000000",
+  "fill-color": {
+    "property": "connectivity",
+    "type": "interval",
+    "stops": [
+      [3, "#f7fbff"],
+      [6, "#6baed6"],
+      [10, "#08306b"]
+    ]
+  },
+
   
   "tooltip": [
     { "id": "connectivity", "title": "Ecosystem Connectivity" , "decimals": 2},
