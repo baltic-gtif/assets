@@ -1,40 +1,43 @@
 {
-  "legend": [
-    {
-      "title": "Ecosystem Connectivity",
-      "range": [
-        "#f7fbff",
-        "#6baed6",
-        "#08306b"
-      ],
-      "domain": [
-        "0 - 3",
-        "3 - 6",
-        "6 - 10"
-      ],
-      "scaleType": "categorical",
-      "markType": "rect"
-    }
-  ],
 
-  "stroke-width": 1,
-  "stroke-color": "#333333",
+  "legend": [
+  {
+    "title": "Ecosystem Connectivity",
+    "domain": [0, 3, 6, 10],
+    "range": ["#005ea0", "#fbb4b9", "#f768a1", "#b5179e"],
+    "scaleType": "interval",
+    "markType": "rect",
+    "boundTo": { "key": "metric", "value": "connectivity" }
+  }
+],
+
+  "stroke-width": 2,
+  "stroke-color": "#faf5e880",
 
   "jsonform": {
     "type": "object",
     "title": "Data configuration"
   },
 
-  "fill-color": {
-    "property": "connectivity",
-    "type": "interval",
-    "stops": [
-      [3, "#f7fbff"],
-      [6, "#6baed6"],
-      [10, "#08306b"]
-    ]
-  },
+"fill-color": [
+  "case",
+  ["==", ["var", "metric"], "connectivity"],
 
+  [
+    "case",
+    ["==", ["get", "connectivity"], null],
+    [0, 0, 0, 0],
+
+    ["<", ["get", "connectivity"], 0], "#005ea0",
+    ["<=", ["get", "connectivity"], 3], "#005ea0",
+    ["<=", ["get", "connectivity"], 6], "#fbb4b9",
+    ["<=", ["get", "connectivity"], 10], "#b5179e",
+
+    "#b5179e"
+  ],
+
+  [215, 235, 215, 0.25]
+]
   
   "tooltip": [
     { "id": "connectivity", "title": "Ecosystem Connectivity" , "decimals": 2},
