@@ -20,10 +20,10 @@
   "fill-color": "#00000000",
   
   "tooltip": [
-    { "id": "0_id", "title": "Internal ID" , "decimals": 0},
+    { "id": "0_id", "title": "Internal ID", "decimals": 0 },
     { "id": "1_area_ha", "title": "Parcel area (ha)", "decimals": 1 },
     { "id": "2_classification", "title": "Category" },
     { "id": "3_psl_kodas", "title": "Type" },
-    { "id": "4_connectivity", "title": "Ecosystem Connectivity" , "decimals": 2},
+    { "id": "4_connectivity", "title": "Ecosystem Connectivity", "decimals": 2 }
   ]
 }
