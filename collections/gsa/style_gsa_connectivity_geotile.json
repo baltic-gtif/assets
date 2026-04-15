@@ -1,15 +1,14 @@
 {
-
   "legend": [
-  {
-    "title": "Ecosystem Connectivity",
-    "domain": [0, 3, 6, 10],
-    "range": ["#005ea0", "#fbb4b9", "#f768a1", "#b5179e"],
-    "scaleType": "interval",
-    "markType": "rect",
-    "boundTo": { "key": "metric", "value": "connectivity" }
-  }
-],
+    {
+      "title": "Ecosystem Connectivity",
+      "domain": [0, 3, 6, 10],
+      "range": ["#005ea0", "#fbb4b9", "#f768a1", "#b5179e"],
+      "scaleType": "interval",
+      "markType": "rect",
+      "boundTo": { "key": "metric", "value": "connectivity" }
+    }
+  ],
 
   "stroke-width": 2,
   "stroke-color": "#faf5e880",
@@ -19,30 +18,29 @@
     "title": "Data configuration"
   },
 
-"fill-color": [
-  "case",
-  ["==", ["var", "metric"], "connectivity"],
-
-  [
+  "fill-color": [
     "case",
-    ["==", ["get", "connectivity"], null],
-    [0, 0, 0, 0],
+    ["==", ["var", "metric"], "connectivity"],
 
-    ["<", ["get", "connectivity"], 0], "#005ea0",
-    ["<=", ["get", "connectivity"], 3], "#005ea0",
-    ["<=", ["get", "connectivity"], 6], "#fbb4b9",
-    ["<=", ["get", "connectivity"], 10], "#b5179e",
+    [
+      "case",
+      ["==", ["get", "connectivity"], null],
+      [0, 0, 0, 0],
 
-    "#b5179e"
+      ["<=", ["get", "connectivity"], 3], "#005ea0",
+      ["<=", ["get", "connectivity"], 6], "#fbb4b9",
+      ["<=", ["get", "connectivity"], 10], "#f768a1",
+
+      "#b5179e"
+    ],
+
+    [215, 235, 215, 0.25]
   ],
 
-  [215, 235, 215, 0.25]
-]
-  
   "tooltip": [
-    { "id": "connectivity", "title": "Ecosystem Connectivity" , "decimals": 2},
-    { "id": "id_2024", "title": "Internal ID - 2024" , "decimals": 0},
-    { "id": "id_2025", "title": "Internal ID - 2025" , "decimals": 0},
+    { "id": "connectivity", "title": "Ecosystem Connectivity", "decimals": 2 },
+    { "id": "id_2024", "title": "Internal ID - 2024", "decimals": 0 },
+    { "id": "id_2025", "title": "Internal ID - 2025", "decimals": 0 },
     { "id": "psl_kodas_2024", "title": "Type - 2024" },
     { "id": "psl_kodas_2025", "title": "Type - 2025" },
     { "id": "classification_2024", "title": "Category - 2024" },
