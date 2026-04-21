@@ -1,29 +1,90 @@
 {
   "legend": [
     {
-      "title": "",
-      "range": ["#faf5e880"],
-      "domain": ["Permanent Grassland"],
+      "title": "Ecosystem Connectivity",
+      "range": ["#ede0e0", "#bebebe", "#9b9898", "#6c6767", "#3c3636"],
+      "domain": ["<0", "0–2", "2–3", "3–6", "6–8", ">8"],
       "scaleType": "categorical",
-      "markType": "rect"
+      "markType": "rect",
+      "boundTo": { "key": "metric", "value": "a4_connectivity" }
+    },
+    {
+      "title": "Ecosystem Connectivity Evolution (from previous year to current year)",
+      "range": ["#005ea0", "#ffcccc", "#ff3232", "#ff0000", "#cc0000", "#7f0000", "#330000"],
+      "domain": ["<-5", "-5–0", "0–2", "2–5", "5–6", "6–8", ">8"],
+      "scaleType": "categorical",
+      "markType": "rect",
+      "boundTo": { "key": "metric", "value": "a5_connectivity_drop" }
     }
   ],
 
-  "stroke-width": 2,
-  "stroke-color": "#faf5e880",
+  "stroke-width": 3,
+  "stroke-color": "#f4843650",
 
   "jsonform": {
     "type": "object",
-    "title": "Data configuration"
+    "title": "Data configuration",
+    "properties": {
+      "metric": {
+        "title": "Metric",
+        "type": "string",
+        "enum": ["a4_connectivity", "a5_connectivity_drop"],
+        "options": {
+          "enum_titles": [
+            "Ecosystem Connectivity",
+            "Ecosystem Connectivity Evolution (from previous year to current year)"
+          ]
+        },
+        "default": "a4_connectivity"
+      }
+    }
   },
 
-  "fill-color": "#00000000",
-  
+  "fill-color": [
+    "case",
+
+    ["==", ["var", "metric"], "a5_connectivity_drop"],
+    [
+      "case",
+      ["!", ["has", "a5_connectivity_drop"]], [0, 0, 0, 0],
+
+      ["<", ["get", "a5_connectivity_drop"], -5], "#005ea0",
+      ["<=", ["get", "a5_connectivity_drop"], 0], "#ffcccc",
+      ["<=", ["get", "a5_connectivity_drop"], 2], "#ff3232",
+      ["<=", ["get", "a5_connectivity_drop"], 5], "#ff0000",
+      ["<=", ["get", "a5_connectivity_drop"], 6], "#cc0000",
+      ["<=", ["get", "a5_connectivity_drop"], 8], "#7f0000",
+      [">", ["get", "a5_connectivity_drop"], 8], "#330000",
+
+      "#000000"
+    ],
+
+    ["==", ["var", "metric"], "a4_connectivity"],
+    [
+      "case",
+      ["!", ["has", "a4_connectivity"]], [0, 0, 0, 0],
+
+      ["<", ["get", "a4_connectivity"], 0], "#ede0e0",
+      ["<=", ["get", "a4_connectivity"], 2], "#bebebe",
+      ["<=", ["get", "a4_connectivity"], 3], "#9b9898",
+      ["<=", ["get", "a4_connectivity"], 6], "#6c6767",
+      ["<=", ["get", "a4_connectivity"], 8], "#3c3636",
+      [">", ["get", "a4_connectivity"], 8], "#3c3636",
+
+      "#000000"
+    ],
+
+    [215, 235, 215, 0.25]
+  ],
+
   "tooltip": [
     { "id": "a0_id", "title": "Internal ID", "decimals": 0 },
     { "id": "a1_area_ha", "title": "Parcel area (ha)", "decimals": 1 },
     { "id": "a2_classification", "title": "Category" },
     { "id": "a3_psl_kodas", "title": "Type" },
-    { "id": "a4_connectivity", "title": "Ecosystem Connectivity", "decimals": 2 }
-  ]
+    { "id": "a4_connectivity", "title": "Ecosystem Connectivity", "decimals": 3 },
+    { "id": "a5_connectivity_drop", "title": "Ecosystem Connectivity Evolution (from previous year)", "decimals": 3 }
+  ],
+
+  "variables": { "metric": "a4_connectivity" }
 }
