@@ -3,7 +3,7 @@
     {
       "title": "Ecosystem Connectivity",
       "range": ["#ede0e0", "#bebebe", "#9b9898", "#6c6767", "#3c3636"],
-      "domain": ["<0", "0–2", "2–3", "3–6", "6–8", ">8"],
+      "domain": [">0–1", ">1-2.5", ">2.5–4.5", ">4.5-10"],
       "scaleType": "categorical",
       "markType": "rect",
       "boundTo": { "key": "metric", "value": "a4_connectivity" }
@@ -32,7 +32,7 @@
         "options": {
           "enum_titles": [
             "Ecosystem Connectivity",
-            "Ecosystem Connectivity Evolution (from previous year to current year)"
+            "Ecosystem Connectivity Evolution"
           ]
         },
         "default": "a4_connectivity"
@@ -63,14 +63,12 @@
     [
       "case",
       ["!", ["has", "a4_connectivity"]], [0, 0, 0, 0],
-
-      ["<", ["get", "a4_connectivity"], 0], "#ede0e0",
-      ["<=", ["get", "a4_connectivity"], 2], "#bebebe",
-      ["<=", ["get", "a4_connectivity"], 3], "#9b9898",
-      ["<=", ["get", "a4_connectivity"], 6], "#6c6767",
-      ["<=", ["get", "a4_connectivity"], 8], "#3c3636",
-      [">", ["get", "a4_connectivity"], 8], "#3c3636",
-
+    
+      ["<=", ["get", "a4_connectivity"], 1], "#d73027",
+      ["<=", ["get", "a4_connectivity"], 2.5], "#fc8d59",
+      ["<=", ["get", "a4_connectivity"], 4.5], "#fee08b",
+      ["<=", ["get", "a4_connectivity"], 10], "#1a9850",
+    
       "#000000"
     ],
 
