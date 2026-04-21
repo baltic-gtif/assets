@@ -2,7 +2,7 @@
   "legend": [
     {
       "title": "Ecosystem Connectivity",
-      "range": ["#ede0e0", "#bebebe", "#9b9898", "#6c6767", "#3c3636"],
+      "range": ["#d73027", "#fc8d59", "#fee08b", "#1a9850"],
       "domain": [">0–1", ">1-2.5", ">2.5–4.5", ">4.5-10"],
       "scaleType": "categorical",
       "markType": "rect",
