@@ -11,7 +11,7 @@
     {
       "title": "Ecosystem Connectivity Evolution (from previous year to current year)",
       "range": ["#8b0000", "#ff0000", "#0096FF", "#ffff66", "#ccffcc", "#66cc66", "#33a02c", "#006400"],
-      "domain": ["<-5", "-5–0>", "=0","<0–2", "2–5", "5–6", "6–8", ">8"],
+      "domain": ["<-5", "-5–0", "0", "0–2", "2–5", "5–8", ">8"],
       "scaleType": "categorical",
       "markType": "rect",
       "boundTo": { "key": "metric", "value": "ab1_connectivity_evolution" }
@@ -39,17 +39,6 @@
       }
     }
   },
-
-
-  
-
-    ["<", ["get", "ab1_connectivity_evolution"], -5], "#8b0000",
-    ["<", ["get", "ab1_connectivity_evolution"], 0], "#ff0000",
-
-    ["==", ["get", "ab1_connectivity_evolution"], 0], "#ffff66",
-
-    ["<=", ["get", "ab1_connectivity_evolution"], 2], "#ccffcc",
-
   
   "fill-color": [
     "case",
