@@ -10,14 +10,14 @@
     },
     {
       "title": "Ecosystem Connectivity Evolution (from previous year to current year)",
-      "range": ["#005ea0", "#ffcccc", "#ff3232", "#ff0000", "#cc0000", "#7f0000", "#330000"],
+      "range": ["#8b0000", "#ff0000", "#ffff66", "#ccffcc", "#66cc66", "#33a02c", "#006400"],
       "domain": ["<-5", "-5–0", "0–2", "2–5", "5–6", "6–8", ">8"],
       "scaleType": "categorical",
       "markType": "rect",
       "boundTo": { "key": "metric", "value": "ab1_connectivity_evolution" }
     }
   ],
-
+  
   "stroke-width": 3,
   "stroke-color": "#f4843650",
 
@@ -48,13 +48,13 @@
       "case",
       ["!", ["has", "ab1_connectivity_evolution"]], [0, 0, 0, 0],
 
-      ["<", ["get", "ab1_connectivity_evolution"], -5], "#005ea0",
-      ["<=", ["get", "ab1_connectivity_evolution"], 0], "#ffcccc",
-      ["<=", ["get", "ab1_connectivity_evolution"], 2], "#ff3232",
-      ["<=", ["get", "ab1_connectivity_evolution"], 5], "#ff0000",
-      ["<=", ["get", "ab1_connectivity_evolution"], 6], "#cc0000",
-      ["<=", ["get", "ab1_connectivity_evolution"], 8], "#7f0000",
-      [">", ["get", "ab1_connectivity_evolution"], 8], "#330000",
+      ["<", ["get", "ab1_connectivity_evolution"], -5], "#8b0000",
+      ["<=", ["get", "ab1_connectivity_evolution"], 0], "#ff0000",
+      ["<=", ["get", "ab1_connectivity_evolution"], 2], "#ffff66",
+      ["<=", ["get", "ab1_connectivity_evolution"], 5], "#ccffcc",
+      ["<=", ["get", "ab1_connectivity_evolution"], 6], "#66cc66",
+      ["<=", ["get", "ab1_connectivity_evolution"], 8], "#33a02c",
+      [">", ["get", "ab1_connectivity_evolution"], 8], "#006400",
 
       "#000000"
     ],
