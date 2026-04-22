@@ -14,7 +14,7 @@
       "domain": ["<-5", "-5–0", "0–2", "2–5", "5–6", "6–8", ">8"],
       "scaleType": "categorical",
       "markType": "rect",
-      "boundTo": { "key": "metric", "value": "a5_connectivity_drop" }
+      "boundTo": { "key": "metric", "value": "ab1_connectivity_evolution" }
     }
   ],
 
@@ -28,7 +28,7 @@
       "metric": {
         "title": "Metric",
         "type": "string",
-        "enum": ["a4_connectivity", "a5_connectivity_drop"],
+        "enum": ["a4_connectivity", "ab1_connectivity_evolution"],
         "options": {
           "enum_titles": [
             "Ecosystem Connectivity",
@@ -43,18 +43,18 @@
   "fill-color": [
     "case",
 
-    ["==", ["var", "metric"], "a5_connectivity_drop"],
+    ["==", ["var", "metric"], "ab1_connectivity_evolution"],
     [
       "case",
-      ["!", ["has", "a5_connectivity_drop"]], [0, 0, 0, 0],
+      ["!", ["has", "ab1_connectivity_evolution"]], [0, 0, 0, 0],
 
-      ["<", ["get", "a5_connectivity_drop"], -5], "#005ea0",
-      ["<=", ["get", "a5_connectivity_drop"], 0], "#ffcccc",
-      ["<=", ["get", "a5_connectivity_drop"], 2], "#ff3232",
-      ["<=", ["get", "a5_connectivity_drop"], 5], "#ff0000",
-      ["<=", ["get", "a5_connectivity_drop"], 6], "#cc0000",
-      ["<=", ["get", "a5_connectivity_drop"], 8], "#7f0000",
-      [">", ["get", "a5_connectivity_drop"], 8], "#330000",
+      ["<", ["get", "ab1_connectivity_evolution"], -5], "#005ea0",
+      ["<=", ["get", "ab1_connectivity_evolution"], 0], "#ffcccc",
+      ["<=", ["get", "ab1_connectivity_evolution"], 2], "#ff3232",
+      ["<=", ["get", "ab1_connectivity_evolution"], 5], "#ff0000",
+      ["<=", ["get", "ab1_connectivity_evolution"], 6], "#cc0000",
+      ["<=", ["get", "ab1_connectivity_evolution"], 8], "#7f0000",
+      [">", ["get", "ab1_connectivity_evolution"], 8], "#330000",
 
       "#000000"
     ],
