@@ -81,7 +81,9 @@
     { "id": "a2_classification", "title": "Category" },
     { "id": "a3_psl_kodas", "title": "Type" },
     { "id": "a4_connectivity", "title": "Ecosystem Connectivity", "decimals": 3 },
-    { "id": "a5_connectivity_drop", "title": "Ecosystem Connectivity Evolution (from previous year)", "decimals": 3 }
+    
+    { "id": "ab0_connectivity_LULCpreviousyear", "title": "Ecosystem Connectivity (from previous year LULC)", "decimals": 3 },
+    { "id": "ab1_connectivity_evolution", "title": "Ecosystem Connectivity Evolution (from previous year)", "decimals": 3 }
   ],
 
   "variables": { "metric": "a4_connectivity" }
