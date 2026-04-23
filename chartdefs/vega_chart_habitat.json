@@ -20,8 +20,11 @@
   "vconcat": [
     {
       "title": {
-        "text": "1. Permanent Grassland Distribution by Parcel Code",
-        "subtitle": "Relative share of each parcel code as a percentage of the total Permanent Grassland area (ha)",
+        "text": "1.Permanent Grassland Distribution by Parcel Code",
+        "subtitle": [
+          "Relative share of each parcel code as a percentage",
+          "of the total Permanent Grassland area (ha"
+        ],
         "subtitleColor": "#666"
       },
       "width": "container",
@@ -67,9 +70,9 @@
     },
     {
       "title": {
-        "text": "2. Estimated Habitat Area (ha) by Parcel Code and Habitat Type",
+        "text": "2.Estimated Habitat Area (ha) by Parcel Code and Habitat Type",
         "subtitle": [
-          "Summed hectare values for habitat-parcel combinations based on percentage share.",
+          "Summed areas values for habitat-parcel combinations based on % share.",
           "Note: Total values aggregate across all parcels of the same type.",
           "Total area may exceed parcel size due to potential habitat overlaps."
         ],
