@@ -1,7 +1,7 @@
 {
   "legend": [
     {
-      "title": "Ecosystem Connectivity",
+      "title": "Ecosystem Connectivity, weighted by habitat distance (relative scale from [1:10]).",
       "range": ["#d73027", "#fc8d59", "#fee08b", "#1a9850"],
       "domain": [">0–1", ">1-2.5", ">2.5–4.5", ">4.5-10"],
       "scaleType": "categorical",
@@ -11,7 +11,7 @@
     {
       "title": "Ecosystem Connectivity Evolution (from previous year to current year)",
       "range": ["#8b0000", "#ff0000", "#0096FF", "#ffff66", "#ccffcc", "#66cc66", "#33a02c", "#006400"],
-      "domain": ["<-5", "-5–0", "0", "0–2", "2–5", "5–8", ">8"],
+      "domain": ["<-6", "-6to-4"-4to–1", "-1to0", "0", "0to1", "1to4", "4to6", ">6"],
       "scaleType": "categorical",
       "markType": "rect",
       "boundTo": { "key": "metric", "value": "ab1_connectivity_evolution" }
