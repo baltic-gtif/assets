@@ -10,8 +10,8 @@
     },
     {
       "title": "Ecosystem Connectivity Evolution (from previous year to current year)",
-      "range": ["#8b0000", "#ff0000", "#0096FF", "#ffff66", "#ccffcc", "#66cc66", "#33a02c", "#006400"],
-      "domain": ["<-6", "-6to-4"-4to–1", "-1to0", "0", "0to1", "1to4", "4to6", ">6"],
+      "range": ["#8b0000", "#ff0000", "#ff6666", "#ffcccc", "#87CEEB", "#ffff66", "#99ff99", "#33a02c", "#006400"],
+      "domain": ["<-6", "-6to-4", "-4to-1", "-1to0", "0", "0to1", "1to4", "4to6", ">6"],
       "scaleType": "categorical",
       "markType": "rect",
       "boundTo": { "key": "metric", "value": "ab1_connectivity_evolution" }
@@ -46,18 +46,20 @@
     ["==", ["var", "metric"], "ab1_connectivity_evolution"],
     [
       "case",
-      ["!", ["has", "ab1_connectivity_evolution"]], [0, 0, 0, 0],
-
-      ["<", ["get", "ab1_connectivity_evolution"], -5], "#8b0000",
-      ["<", ["get", "ab1_connectivity_evolution"], 0], "#ff0000",
-      ["==", ["get", "ab1_connectivity_evolution"], 0], "#0096FF",
-      ["<=", ["get", "ab1_connectivity_evolution"], 2], "#ffff66",
-      ["<=", ["get", "ab1_connectivity_evolution"], 5], "#ccffcc",
-      ["<=", ["get", "ab1_connectivity_evolution"], 6], "#66cc66",
-      ["<=", ["get", "ab1_connectivity_evolution"], 8], "#33a02c",
-      [">", ["get", "ab1_connectivity_evolution"], 8], "#006400",
-
-      "#000000"
+      ["!", ["has", "ab1_connectivity_evolution"]], ["rgba", 0, 0, 0, 0],
+    
+      ["<", ["get", "ab1_connectivity_evolution"], -6], "#8b0000",
+      ["<", ["get", "ab1_connectivity_evolution"], -4], "#ff0000",
+      ["<", ["get", "ab1_connectivity_evolution"], -1], "#ff6666",
+      ["<", ["get", "ab1_connectivity_evolution"], 0], "#ffcccc",
+    
+      ["==", ["get", "ab1_connectivity_evolution"], 0], "#87CEEB",
+    
+      ["<=", ["get", "ab1_connectivity_evolution"], 1], "#ffff66",
+      ["<=", ["get", "ab1_connectivity_evolution"], 4], "#99ff99",
+      ["<=", ["get", "ab1_connectivity_evolution"], 6], "#33a02c",
+    
+      "#006400"
     ],
 
     ["==", ["var", "metric"], "a4_connectivity"],
