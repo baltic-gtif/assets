@@ -46,20 +46,19 @@
     ["==", ["var", "metric"], "ab1_connectivity_evolution"],
     [
       "case",
-      ["!", ["has", "ab1_connectivity_evolution"]], ["rgba", 0, 0, 0, 0],
-    
+      ["!", ["has", "ab1_connectivity_evolution"]], [0, 0, 0, 0],
+
       ["<", ["get", "ab1_connectivity_evolution"], -6], "#8b0000",
       ["<", ["get", "ab1_connectivity_evolution"], -4], "#ff0000",
       ["<", ["get", "ab1_connectivity_evolution"], -1], "#ff6666",
       ["<", ["get", "ab1_connectivity_evolution"], 0], "#ffcccc",
-    
       ["==", ["get", "ab1_connectivity_evolution"], 0], "#87CEEB",
-    
       ["<=", ["get", "ab1_connectivity_evolution"], 1], "#ffff66",
       ["<=", ["get", "ab1_connectivity_evolution"], 4], "#99ff99",
       ["<=", ["get", "ab1_connectivity_evolution"], 6], "#33a02c",
-    
-      "#006400"
+      [">", ["get", "ab1_connectivity_evolution"], 6], "#006400",
+
+      "#000000"
     ],
 
     ["==", ["var", "metric"], "a4_connectivity"],
