@@ -3,7 +3,7 @@
 This indicator shows which land-use categories are most frequently converted to or from Permanent Grassland and where these conversions occur spatially. 
 It helps to identify hotspots of land use change, revealing regions where specific categories drive grassland loss or contribute most to grassland positive conversion.
 
-## Data Sources & references:
+## Data Sources & References:
 - **Global Soil Organic Carbon** content and Sequestration Potential Maps (GSOCseq) V1.0.0:
  
   Estimation of Soil Organic Carbon content and of sequestration potential in agricultural areas under a Business as Usual (BAU) scenario and a Sustainable Soil Management scenarios.
