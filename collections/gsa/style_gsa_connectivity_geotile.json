@@ -10,7 +10,7 @@
     },
     {
       "title": "Ecosystem Connectivity Change (from previous year to current year)",
-      "range": ["#f30c94", "#cf69a5", "#e3aece", "#999999", "#d9ead3", "#39ca9f"],
+      "range": ["#f30c94", "#cf69a5", "#e3aece", "#999999", "#90b2e2", "#29b5e0"],
       "domain": ["<-6", "-6to-4", "-4to-1", "-1to1", "1to4", "4<"],
       "scaleType": "categorical",
       "markType": "rect",
@@ -52,8 +52,8 @@
       ["<", ["get", "ab1_connectivity_evolution"], -4], "#cf69a5",
       ["<", ["get", "ab1_connectivity_evolution"], -1], "#e3aece",
       ["<=", ["get", "ab1_connectivity_evolution"], 1], "#999999",
-      ["<=", ["get", "ab1_connectivity_evolution"], 4], "#d9ead3",
-      [">", ["get", "ab1_connectivity_evolution"], 4], "#39ca9f",
+      ["<=", ["get", "ab1_connectivity_evolution"], 4], "#90b2e2",
+      [">", ["get", "ab1_connectivity_evolution"], 4], "#29b5e0",
 
       "#000000"
     ],
