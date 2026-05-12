@@ -3,7 +3,7 @@
     {
       "title": "Ecosystem Connectivity, weighted by habitat distance (relative scale from [1:10]).",
       "range": ["#d7f884", "#fab743", "#9d5ae8"],
-      "domain": [">0–5", ">5-6", ">6-10"],
+      "domain": ["CAT-1 (>0–5)", "CAT-2 (>5-6)", "CAT-3 (>6-10)"],
       "scaleType": "categorical",
       "markType": "rect",
       "boundTo": { "key": "metric", "value": "a4_connectivity" }
