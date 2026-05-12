@@ -10,9 +10,9 @@ The way PGs are managed, whether through mowing or livestock grazing, has a majo
 - **PG parcels** from the open governmental IACS GSA data, managed by the National Paying Agency of Lithuania (NMA).
 - **Habitat** data from publicly available Lithuanian datasets published in accordance with the INSPIRE Directive.
 - LULC map created based on the availability of the following sorted datasets:
-    **Habitat** (from Inspire LT )
-    **Natura2000 sites** (from Inspire LT )
-    **Small Woody Features**
+    **Habitat** (from Inspire LT ),
+    **Natura2000 sites** (from Inspire LT ),
+    **Small Woody Features**,
     **CLC+ BackBone**
 
 ## Legend description:
