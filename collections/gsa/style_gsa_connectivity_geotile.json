@@ -2,7 +2,7 @@
   "legend": [
     {
       "title": "Ecosystem Connectivity, weighted by habitat distance (relative scale from [1:10]).",
-      "range": ["#d7f884", "#fab743", "#9d5ae8"],
+      "range": ["#beaed1", "#764ca6", "#5e18ad"],
       "domain": ["CAT-1 (>0–5)", "CAT-2 (>5-6)", "CAT-3 (>6-10)"],
       "scaleType": "categorical",
       "markType": "rect",
@@ -63,9 +63,9 @@
       "case",
       ["!", ["has", "a4_connectivity"]], [0, 0, 0, 0],
     
-      ["<=", ["get", "a4_connectivity"], 5], "#d7f884",
-      ["<=", ["get", "a4_connectivity"], 6], "#fab743",
-      ["<=", ["get", "a4_connectivity"], 10], "#9d5ae8",
+      ["<=", ["get", "a4_connectivity"], 5], "#beaed1",
+      ["<=", ["get", "a4_connectivity"], 6], "#764ca6",
+      ["<=", ["get", "a4_connectivity"], 10], "#5e18ad",
     
       "#000000"
     ],
